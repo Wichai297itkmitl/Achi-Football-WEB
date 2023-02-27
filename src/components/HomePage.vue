@@ -4,70 +4,32 @@
   </head>
   <div class="container py-3">
     <div
-      id="carouselExampleIndicators"
-      class="carousel slide"
-      data-bs-ride="carousel"
-    >
+      id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators">
-        <button
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide-to="0"
-          class="active"
-          aria-current="true"
-          aria-label="Slide 1"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide-to="1"
-          aria-label="Slide 2"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide-to="2"
-          aria-label="Slide 3"
-        ></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img
-            src="https://wallpaperaccess.com/full/6324752.jpg"
-            class="d-block w-100"
-            alt="..."
-          />
+          <img src="https://wallpaperaccess.com/full/6324752.jpg" class="d-block w-100" />
+        </div>
+        <div class="carousel-item">
+          <img src="https://wallpaperaccess.com/full/6324752.jpg" class="d-block w-100" />
         </div>
         <div class="carousel-item">
           <img
-            src="https://wallpaperaccess.com/full/6324752.jpg"
-            class="d-block w-100"
-            alt="..."
-          />
-        </div>
-        <div class="carousel-item">
-          <img
-            src="https://wallpaperaccess.com/full/6324752.jpg"
-            class="d-block w-100"
-            alt="..."
-          />
+            src="https://wallpaperaccess.com/full/6324752.jpg" class="d-block w-100" />
         </div>
       </div>
       <button
         class="carousel-control-prev"
-        type="button"
-        data-bs-target="#carouselExampleIndicators"
-        data-bs-slide="prev"
-      >
+        type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
       <button
-        class="carousel-control-next"
-        type="button"
-        data-bs-target="#carouselExampleIndicators"
-        data-bs-slide="next"
-      >
+        class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
@@ -93,7 +55,13 @@
         </div>
       </div>
     </div>
-    <br />
+    <br /><br>
+    <div class="row">
+      <div class="col text-center" style="font-size: 50px; color: aliceblue;">
+        <text>ยินดีต้อนรับสู่เว็บไซต์ ACHI FootBall</text>
+      </div>
+    </div>
+    <br><br>
   </div>
 
   <div class="container-fluid">
@@ -126,9 +94,7 @@
                   <div class="card bg-dark " style="width: 18rem; height: ; ">
                     <img
                       src="https://lzd-img-global.slatic.net/g/p/9a761cd5dc6b4456fd80bed73d8921ea.jpg_720x720q80.jpg_.webp"
-                      class=""
-                      alt="..."
-                      width="100%" height="280px"
+                      class="" width="100%" height="280px"
                     />
                     <div class="card-body text-start" style="color:#fff; width: 18rem; height: 12rem;">
                       <h5 class="card-title">ADIDAS</h5>
@@ -349,11 +315,11 @@ export default {
 </script>
 
 <style>
-.VueBg {
-  background: #1a1818;
-}
-.move:hover{
-  background-color: rgb(58, 58, 58);
-}
+  .VueBg {
+    background: #1a1818;
+  }
+  .move:hover{
+    background-color: rgb(58, 58, 58);
+  }
 
 </style>

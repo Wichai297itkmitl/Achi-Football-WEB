@@ -304,10 +304,36 @@
 </template>
 
 <script>
+
+// function parseURLParams(url) {
+//     var queryStart = url.indexOf("?") + 1,
+//         queryEnd   = url.indexOf("#") + 1 || url.length + 1,
+//         query = url.slice(queryStart, queryEnd - 1),
+//         pairs = query.replace(/\+/g, " ").split("&"),
+//         parms = {}, i, n, v, nv;
+
+//     if (query === url || query === "") return;
+
+//     for (i = 0; i < pairs.length; i++) {
+//         nv = pairs[i].split("=", 2);
+//         n = decodeURIComponent(nv[0]);
+//         v = decodeURIComponent(nv[1]);
+
+//         if (!parms.hasOwnProperty(n)) parms[n] = [];
+//         parms[n].push(nv.length === 2 ? v : null);
+//     }
+//     return parms;
+//   }
+  console.log(window.location.href);
+  console.log(window.location.search);
+  // var data_get = parseURLParams(window.location.href)
+  
+
 export default {
     data(){
         return{
-            title:"FootBall - Boot",
+            url: window.location.search,
+            title:'',
             brand:['NIKE', 'ADIDAS', 'PUMA', 'MIZUNO'],
             size:[],
             color:['แดง', 'ขาว', 'น้ำเงิน', 'ชมพู','ส้ม','แดง','เขียว','เทา'],
@@ -319,9 +345,18 @@ export default {
         for(let i = 32 ; i < 45.5; i+=0.5){
             this.size.push(i);
         }
+        if (this.url === "?p=football"){
+          this.title = "FootBall - Boot";
+        }
+        if (this.url == "?p=futsal"){
+          this.title = "FutSal - Boot";
+        }
     },
     watch:{
-
+      // url(ndata, odata){
+      //   this.url = ndata;
+      //   console.log(odata);
+      // }
     }
 }
 </script>
