@@ -84,7 +84,7 @@
                     <div class="select_sort mt-2">
                         <select name="" id="" class="form-select">
                             <option selected value="A_Z">เรียงตามชื่อ A-z</option>
-                            <option value="z-A">เรียงตามชื่อ z-A</option>
+                            <option value="z-A">เรียงตามชื่อ Z-A</option>
                             <option value="min_to_max">เรียงตามราคา น้อย-มาก</option>
                             <option value="max_to_min">เรียงตามราคา มาก-น้อย</option>
                         </select>
