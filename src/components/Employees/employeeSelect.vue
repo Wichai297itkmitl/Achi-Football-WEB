@@ -6,7 +6,7 @@
   
   <div class="container" style="color: aliceblue;">
       <div class="row">
-        <div class="col-3" id="left">
+        <div class="col-lg-3" id="left">
           <div style="display: flex;"  >
             <a href="#">
               <h3>บัญชีของฉัน</h3>
@@ -28,7 +28,7 @@
         </div>
 
 
-        <div class="col-8">
+        <div class="col-lg-8">
           <h2>รหัสพนักงาน 12345</h2>
           <h4>รายการคำสั่งซื้อ</h4>
           <div class="container">
@@ -52,14 +52,14 @@
 
           </div>
           <form action="">
-            <div class="col-12">
+            <div class="col-lg-12">
 
               <label for="">ค้นหาคำสั่งซื้อ :</label>
               &nbsp;
               <input type="text" placeholder="ระบุเลขที่คำสั่งซื้อ">
 
             </div>
-            <div class="col-12">
+            <div class="col-lg-12">
               <label for="">แสดงคำสั่งซื้อวันที่ :</label>
               &nbsp;
               <input type="date">
@@ -67,7 +67,7 @@
           </form>
 
         </div>
-        <div class="container col-10" style="margin-left: 320px;" >
+        <div class="container col-lg-10" style="margin-left: 320px;" >
           <br>
           <table class="table" style="height: 40%;">
             <thead style="background-color: black;">
