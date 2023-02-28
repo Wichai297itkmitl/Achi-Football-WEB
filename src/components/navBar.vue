@@ -54,23 +54,63 @@
             <img src="@/assets/icons/search.svg">
           </a>
         </div>
-        <div class="col mb-4">
-          <li class="nav-item dropdown">
+        <!-- Login dosnt'n has done dropdown element are select Login or Register -->
+        <div class="col mb-4" v-if="cart_active">
+          <li class="nav-item dropdown ">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <img src="@/assets/icons/user.svg">
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li style="background-color: #E0CB0A;"><a class="dropdown-item" href="/login"><h2>เข้าสู่ระบบ</h2></a></li>
-              <li class="dropdown-item disabled"><h4>หรือ</h4></li>
-              <li style="background-color: #4DCC4B;"><a class="dropdown-item" href="#" ><h2>สมัครสมาชิก</h2></a></li>
+            <ul class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
+              <li >
+                <a class="dropdown-item" href="/login" style="background-color: #E0CB0A;"><h2>เข้าสู่ระบบ</h2></a>
+                <h4>หรือ</h4>
+                <a class="dropdown-item" href="/register" style="background-color: #4DCC4B;"><h2>สมัครสมาชิก</h2></a>
+              </li>
+              <!-- <li class="dropdown-item disabled"><h4>หรือ</h4></li>
+              <li style="background-color: #4DCC4B;"><a class="dropdown-item" href="/register" ><h2>สมัครสมาชิก</h2></a></li> -->
             </ul>
           </li>
         </div>
-        <div class="col mx-2 mt-4">
+
+        <!-- Login has done ! -->
+        <div class="col mb-4" v-if="cart_active == false">
+          <li class="nav-item dropdown ">
+              <a class="nav-link dropdown-toggle d-flex" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="@/assets/icons/user.svg" >
+                <h5 style="color:aliceblue" class="mt-2 mx-1">{{ username }}</h5>
+              </a>
+              <!-- <a class="nav-link dropdown-toggle" style="font-size: 18px; color: aliceblue;" href="#" id="navbarDropdown" 
+                role="button" data-bs-toggle="dropdown" aria-expanded="false"> </a>-->
+              
+            <ul class="dropdown-menu bg-secondary" aria-labelledby="navbarDropdown">
+              <li><h3><a href="#" class="modi-a">บันชีของฉัน</a></h3></li>
+              <li><h3><a href="#" class="modi-a">ประวัติการสั่งซื้อ</a></h3></li>
+              <li><h3><a href="#" class="modi-a">สินค้าที่สนใจ</a></h3></li>
+              <li><h3><a :href="url" @click="log_out()" class="" style="color: #E7CB0A;">ออกจากระบบ</a></h3></li>
+            </ul>
+          </li>
+        </div>
+
+        <div class="col mt-4" v-if="cart_active == false">
           <a href="#" >
             <img src="@/assets/icons/cart.svg">
           </a>
         </div>
+
+        <!-- Login ? -->
+        <div class="col mb-4" v-if="cart_active">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="@/assets/icons/cart.svg">
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><p style="font-size: 18px; "> กรุณาเข้าสู้ระบบเพื่อใช้งานตระกร้าสินค้า</p> 
+                <a class="dropdown-item" href="/login" style="background-color: #E0CB0A;"><h4>เข้าสู่ระบบ</h4></a>
+              </li>
+            </ul>
+          </li>
+        </div>
+        <!-- if login have done this emlement on above not display-->
       </div>
 
     </div>
@@ -92,12 +132,29 @@
 </template>
 
 // <script>
+console.log(window.location.href);
+
 export default {
   data() {
     return {
       search: false,
+      username: 'Wichai',
+      url: window.location.href,
     };
   },
+  computed:{
+    cart_active(){
+      if (!this.username)
+        return true
+      else
+        return false
+    }
+  },
+  methods:{
+    log_out(){
+      this.username = '';
+    }
+  }
 };
 
 </script>
@@ -109,4 +166,17 @@ export default {
     position: relative;
     background-color: #504E4E;
   }
+
+  .modi-a{
+    color: aliceblue;
+    text-decoration: none;
+  }
+  .modi-a:hover{
+    color: rgb(255, 197, 60);
+  }
+  .dropdown-menu {
+    width: 220px !important;
+    padding: 15px !important;
+    /* height: 300px !important; */
+}
 </style>

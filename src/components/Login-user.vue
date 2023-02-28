@@ -24,7 +24,7 @@
                 <div class="col-auto mt-3">
                     <button type="submit" class="btn btn-primary mb-3 btn-lg">เข้าสู่ระบบ</button>
                 </div>
-                <h5>ฉันยังไม่ได้เป็นสมาชิก <a href="#" style="color:aliceblue">สมัครสมาชิกเลย</a></h5>
+                <h5>ฉันยังไม่ได้เป็นสมาชิก <a href="/register" style="color:aliceblue">สมัครสมาชิกเลย</a></h5>
             </form>
             <div class="col-6 mx-4">
                 <img src="https://www.lovellsoccer.co.uk/cms/graphics/Puma-Supercharge-Product-Page-Mobile.jpg"
