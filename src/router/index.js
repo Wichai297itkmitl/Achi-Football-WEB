@@ -3,10 +3,10 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.min.js'
 import "bootstrap-icons/font/bootstrap-icons.css";
 //import navBar from "@/components/navBar.vue";
-import HomePage from "@/components/HomePage.vue";
-import List_Product from "@/components/List-Product.vue";
-import Login from "@/components/Login-user.vue";
-import Register from "@/components/Register-user.vue";
+import HomePage from "@/components/Customers/HomePage.vue";
+import List_Product from "@/components/Customers/List-Product.vue";
+import Login from "@/components/Customers/Login-user.vue";
+import Register from "@/components/Customers/Register-user.vue";
 
 const routes = [
     {
