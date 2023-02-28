@@ -9,7 +9,7 @@ import Login from "@/components/Customers/Login-user.vue";
 import Register from "@/components/Customers/Register-user.vue";
 import Cart from "@/components/Customers/Cart-Page.vue";
 import ProductDetail from "@/components/Customers/Product-Detail.vue";
-
+// saasdas
 const routes = [
     {
         path: "/",
