@@ -11,6 +11,7 @@ import Cart from "@/components/Customers/Cart-Page.vue";
 import ProductDetail from "@/components/Customers/Product-Detail.vue";
 import User_info from "@/components/Customers/User-information.vue";
 import employeeSelect from "@/components/Employees/employeeSelect.vue";
+import emCon from "@/components/Employees/employeesConfirm.vue";
 // saasdas
 const routes = [
     {
@@ -52,7 +53,12 @@ const routes = [
         path:"/account-information",
         name:"acc_info",
         component: User_info,
+    },{
+        path:"/emCon",
+        name:"emConfirm",
+        component:emCon
     },
+
 
 ]
 
