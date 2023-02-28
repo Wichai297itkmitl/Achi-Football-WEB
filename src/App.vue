@@ -24,4 +24,5 @@ export default {
 .VueBg {
   background: #1a1818;
 }
+
 </style>
