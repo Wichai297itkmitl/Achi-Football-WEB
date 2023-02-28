@@ -135,7 +135,7 @@
 
 </template>
 
-// <script>
+<script>
 console.log(window.location.href);
 
 export default {
@@ -167,7 +167,7 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
 
   .modal-login{
     color: antiquewhite;

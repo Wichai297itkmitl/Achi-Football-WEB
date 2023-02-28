@@ -8,6 +8,7 @@ import List_Product from "@/components/Customers/List-Product.vue";
 import Login from "@/components/Customers/Login-user.vue";
 import Register from "@/components/Customers/Register-user.vue";
 import Cart from "@/components/Customers/Cart-Page.vue";
+import ProductDetail from "@/components/Customers/Product-Detail.vue";
 
 const routes = [
     {
@@ -33,8 +34,13 @@ const routes = [
     {
         path:"/cart",
         name: "cart",
-        component: Cart,
+        component: Cart
     },
+    {
+        path:"/info",
+        name:"ProductDetail",
+        component: ProductDetail
+    }
 
 ]
 

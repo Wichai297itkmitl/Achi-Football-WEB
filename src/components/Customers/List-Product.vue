@@ -361,7 +361,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 .checksize{
     height: 12rem;
