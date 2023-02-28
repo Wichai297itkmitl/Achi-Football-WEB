@@ -1,20 +1,18 @@
 <template>
   <head>
     <title>AchiFootBall</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   </head>
-  <div class="container">
-
-
-    <div class="container-fluid">
+  
+  <div class="container" style="color: aliceblue;">
       <div class="row">
-        <div class="col-lg-3" id="left">
+        <div class="col-3" id="left">
           <div style="display: flex;">
             <a href="#">
               <h3>บัญชีของฉัน</h3>
             </a>
             <img src="logo.png" alt="">
           </div>
-
           <a href="#">
             <h3>รายการคำสั่งซื้อ</h3>
           </a>
@@ -22,7 +20,6 @@
             <h3>ส่งเลขติดตามพัศดุ</h3>
           </a>
           <div style="display: flex;">
-
             <a href="#">
               <H3 style="text-decoration: underline;">ออกจากระบบ</H3>
             </a>
@@ -31,7 +28,7 @@
         </div>
 
 
-        <div class="col-lg-6">
+        <div class="col-8">
           <h2>รหัสพนักงาน 12345</h2>
           <h4>รายการคำสั่งซื้อ</h4>
           <div class="container">
@@ -55,14 +52,14 @@
 
           </div>
           <form action="">
-            <div class="col-lg-6">
+            <div class="col-6">
 
               <label for="">ค้นหาคำสั่งซื้อ :</label>
               &nbsp;
               <input type="text" placeholder="ระบุเลขที่คำสั่งซื้อ">
 
             </div>
-            <div class="col-lg-6">
+            <div class="col-6">
               <label for="">แสดงคำสั่งซื้อวันที่ :</label>
               &nbsp;
               <input type="date">
@@ -70,7 +67,7 @@
           </form>
 
         </div>
-        <div class="container col-lg-7 ">
+        <div class="container col-7 ">
           <br>
           <table class="table" style="height:40%;">
             <thead style="background-color: black;">
@@ -109,7 +106,6 @@
         </div>
       </div>
 
-    </div>
   </div>
 </template>
   
@@ -123,11 +119,7 @@ export default {
 }
 </script>
   
-<style>
-body {
-  background-color: rgb(39, 35, 35);
-  color: aliceblue;
-}
+<style scoped> 
 
 #left {
 
