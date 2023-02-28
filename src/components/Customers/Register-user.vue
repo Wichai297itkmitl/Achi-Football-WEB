@@ -121,7 +121,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .checkbox-lg .form-check-input {
     top: .8rem;
     scale: 1.4;
