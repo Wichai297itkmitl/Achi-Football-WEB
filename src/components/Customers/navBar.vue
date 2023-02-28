@@ -91,10 +91,14 @@
           </li>
         </div>
 
-        <div class="col mt-4" v-if="cart_active == false">
-          <a href="#" >
+        <div class="col mt-4 d-flex" v-if="cart_active == false">
+          <a href="/cart" @click="cart_number_no_look = 0">
             <img src="@/assets/icons/cart.svg">
           </a>
+          <div class="numCart text-center">
+            <h3>{{ cartNum }}</h3>
+          </div>
+          
         </div>
 
         <!-- Login ? -->
@@ -140,6 +144,7 @@ export default {
       search: false,
       username: 'Wichai',
       url: window.location.href,
+      cart_number_no_look: 2,
     };
   },
   computed:{
@@ -148,6 +153,9 @@ export default {
         return true
       else
         return false
+    },
+    cartNum(){
+      return this.cart_number_no_look;
     }
   },
   methods:{
@@ -178,5 +186,13 @@ export default {
     width: 220px !important;
     padding: 15px !important;
     /* height: 300px !important; */
+}
+
+.numCart{
+  width: 2rem;
+  height: 2.2rem;
+  color: aliceblue;
+  background-color: rgb(230, 164, 0);
+  border-radius: 50%;
 }
 </style>

@@ -7,6 +7,7 @@ import HomePage from "@/components/Customers/HomePage.vue";
 import List_Product from "@/components/Customers/List-Product.vue";
 import Login from "@/components/Customers/Login-user.vue";
 import Register from "@/components/Customers/Register-user.vue";
+import Cart from "@/components/Customers/Cart-Page.vue";
 
 const routes = [
     {
@@ -28,6 +29,11 @@ const routes = [
         path:"/register",
         name: "register",
         component: Register
+    },
+    {
+        path:"/cart",
+        name: "cart",
+        component: Cart,
     },
 
 ]
