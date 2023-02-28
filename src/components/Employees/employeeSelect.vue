@@ -13,15 +13,15 @@
             </a>
             <img src="logo.png" alt="">
           </div>
-          <a href="#" style=" margin-top: 10px;">
-            <h3 >รายการคำสั่งซื้อ</h3>
+          <a href="#" >
+            <h3 style="margin-top: 10px;">รายการคำสั่งซื้อ</h3>
           </a>
-          <a href="#"  style=" margin-top: 10px;">
-            <h3>ส่งเลขติดตามพัศดุ</h3>
+          <a href="#"  >
+            <h3 style="margin-top: 10px;"> ส่งเลขติดตามพัศดุ</h3>
           </a>
           <div style="display: flex;">
-            <a href="#"  style=" margin-top: 10px;">
-              <H3 style="text-decoration: underline;">ออกจากระบบ</H3>
+            <a href="#" >
+              <H3 style="text-decoration: underline;margin-top: 10px; ">ออกจากระบบ</H3>
             </a>
             <img src="logo.png" alt="">
           </div>
