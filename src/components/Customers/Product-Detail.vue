@@ -44,6 +44,23 @@
                         <span class="visually-hidden">Next</span>
                     </button> -->
                 </div>
+                <div class="row py-4 " style="color:aliceblue">
+                    <div class="col">
+                        <h2>รายละเอียด</h2>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col">
+                            <p>
+                                Obsessed with perfecting your craft? We design Elite cleats for you and the world’s biggest
+                                stars to give you high-level quality, because you demand greatness from yourself and your
+                                footwear. Infused with revolutionary Nike Gripknit, these cleats provide better touch on the
+                                ball in an intuitive design that's made to optimize performance both when striking and
+                                during close control.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- ProductDail -->
@@ -65,7 +82,8 @@
                         <h3>ขนาด: </h3>
                         <div class="mx-4">
                             <div class="col">
-                                <select id="inputState" class="form-select">
+                                <select id="inputState" class="form-select"
+                                    style="background-color: #1a1818; color: aliceblue;">
                                     <option selected>EUR</option>
                                     <option>US</option>
                                 </select>
@@ -74,9 +92,31 @@
                     </div>
                 </div>
                 <div class="row">
+                    <div class="col-2 py-2 mx-0" v-for=" item in size" :key="item">
+                        <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
+                        <label class="btn bg-chekbox btn-lg" for="option2">{{ item }} {{ unit }}</label>
+                    </div>
+                </div>
+                <div class="row py-4">
+                    <div class="col d-flex">
+                        <h2>จำนวน:</h2>
+                        <div class="btn-group mx-4" role="group" aria-label="Basic outlined example">
+                            <button type="button" class="btn btn-outline-light">-</button>
+                            <input type="text" class="form-control text-center ele-num"
+                                style="color: aliceblue; background-color: #1a1818;" value="1">
+                            <button type="button" class="btn btn-outline-light">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
                     <div class="col">
-                        <input type="checkbox" class="btn-check bg-chekbox" id="btn-check-2" checked autocomplete="off">
-                        <label class="btn btn-primary">Checked</label>
+                        <h2>ราคา: 8,500 THB</h2>
+                    </div>
+                </div>
+                <div class="row py-3">
+                    <div class="col d-flex">
+                        <button type="button" class="btn btn-primary col-6 btn-lg"
+                            style="font-size: 35px;">เพิ่มใส่ตะกร้า</button>
                     </div>
                 </div>
             </div>
@@ -89,14 +129,19 @@ export default {
     data() {
         return {
             title: "ADIDAS X SPEEDPORTAL MESSI .1 FG - TMSOOR/MINRUS/CBLACK",
+            size: [],
+            unit: "EUR"
         }
-    }
+    },
+    created() {
+        for (let i = 35; i < 45.5; i += 0.5) {
+            this.size.push(i);
+        }
+    },
 }
 </script>
 
-<style scoped>
-.bg-chekbox{
-    background-color: rgb(69, 69, 69);
-}
-
-</style>
+<style scoped>.bg-chekbox {
+    background-color: rgb(49, 49, 49);
+    color: aliceblue;
+}</style>
