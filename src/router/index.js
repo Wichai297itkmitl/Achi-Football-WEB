@@ -15,6 +15,7 @@ import emCon from "@/components/Employees/employeesConfirm.vue";
 import emSelecttrue from "@/components/Employees/employeeSelecttrue.vue";
 import emCondetail from "@/components/Employees/employeeProductdetail.vue";
 import emChangePro from "@/components/Employees/employeeChangePro.vue";
+import emAddPro from "@/components/Employees/employeeAddpro.vue";
 // saasdas
 const routes = [
     {
@@ -75,6 +76,11 @@ const routes = [
         path:"/emChangePro",
         name: "emchangeProduct",
         component:emChangePro
+    },
+    {
+        path:"/emAddPro",
+        name:"emAddProduct",
+        component:emAddPro
     },
 
 

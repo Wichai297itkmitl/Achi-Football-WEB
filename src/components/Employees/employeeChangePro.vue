@@ -86,15 +86,15 @@
                         </div>
                         <div style="margin-bottom: 10px; ">
                             <h5 style="display: inline">ชื่อสินค้า :</h5>
-                            <input type="text" placeholder="ADIDAS X SPEEDPORTAL MESSI .1 FG - TMSOOR/MINRUS/CBLACK">
+                            <input type="text" placeholder="ADIDAS X SPEEDPORTAL MESSI .1 FG - TMSOOR/MINRUS/CBLACK" style="border-radius: 10px;">
                         </div> 
                         <div style="margin-bottom: 10px;">
                             <h5 style="display: inline">แบรนด์ :</h5>
-                            <input type="text" placeholder="Nike">
+                            <input type="text" placeholder="Nike" style="border-radius: 10px;">
                         </div>
                         <div style="margin-bottom: 10px;">
                             <h5 style="display: inline">ราคา :</h5>
-                            <input type="text" placeholder="8,500">
+                            <input type="text" placeholder="8,500" style="border-radius: 10px;">
                         </div>
                         <button type="button" class="btn-lg btn-success">บันทึก</button>
                     </div>
@@ -112,19 +112,19 @@
                         </div>
                         <div style="margin-bottom: 10px; ">
                             <h5 style="display: inline">ขนาด :</h5>
-                            <input type="text" placeholder="7 EU">
+                            <input type="text" placeholder="7 EU" style="border-radius: 10px;">
                             &nbsp;
                             <h5 style="display: inline; color: yellow;" >หมายเหตุ* หน่วยเป็น EU</h5>
                         </div> 
                         <div style="margin-bottom: 10px;">
                             <h5 style="display: inline">สี :</h5>
-                            <input type="text" placeholder="Red">
+                            <input type="text" placeholder="Red" style="border-radius: 10px;">
                             &nbsp;
                             <h5 style="display: inline; color: yellow;" >ตัวอย่าง Red/blue/pink</h5>
                         </div>
                         <div style="margin-bottom: 10px;">
                             <h5 style="display: inline">จำนวน :</h5>
-                            <input type="text" placeholder="0">
+                            <input type="text" placeholder="0" style="border-radius: 10px;">
                         </div>
                         <button type="button" class="btn-lg btn-warning">เพิ่มสินค้า</button>
                     </div>
