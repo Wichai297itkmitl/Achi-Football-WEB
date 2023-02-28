@@ -7,20 +7,20 @@
   <div class="container" style="color: aliceblue;">
       <div class="row">
         <div class="col-3" id="left">
-          <div style="display: flex;">
+          <div style="display: flex;"  >
             <a href="#">
               <h3>บัญชีของฉัน</h3>
             </a>
             <img src="logo.png" alt="">
           </div>
-          <a href="#">
-            <h3>รายการคำสั่งซื้อ</h3>
+          <a href="#" style=" margin-top: 10px;">
+            <h3 >รายการคำสั่งซื้อ</h3>
           </a>
-          <a href="#">
+          <a href="#"  style=" margin-top: 10px;">
             <h3>ส่งเลขติดตามพัศดุ</h3>
           </a>
           <div style="display: flex;">
-            <a href="#">
+            <a href="#"  style=" margin-top: 10px;">
               <H3 style="text-decoration: underline;">ออกจากระบบ</H3>
             </a>
             <img src="logo.png" alt="">
@@ -32,7 +32,7 @@
           <h2>รหัสพนักงาน 12345</h2>
           <h4>รายการคำสั่งซื้อ</h4>
           <div class="container">
-            <span style="display: flex;">
+            <span style="display: flex; margin: 10px;">
               <h5>แสดงรายการ : </h5>
               &nbsp;
               <form action="">
@@ -52,14 +52,14 @@
 
           </div>
           <form action="">
-            <div class="col-6">
+            <div class="col-12">
 
               <label for="">ค้นหาคำสั่งซื้อ :</label>
               &nbsp;
               <input type="text" placeholder="ระบุเลขที่คำสั่งซื้อ">
 
             </div>
-            <div class="col-6">
+            <div class="col-12">
               <label for="">แสดงคำสั่งซื้อวันที่ :</label>
               &nbsp;
               <input type="date">
@@ -67,9 +67,9 @@
           </form>
 
         </div>
-        <div class="container col-7 ">
+        <div class="container col-10" style="margin-left: 320px;" >
           <br>
-          <table class="table" style="height:40%;">
+          <table class="table" style="height: 40%;">
             <thead style="background-color: black;">
               <tr>
                 <th>เลขที่คำสั่งซื้อ</th>
@@ -129,13 +129,19 @@ export default {
 
 a {
   color: aliceblue;
+  text-decoration: none;
 }
 
 table {
   height: 20rem;
+  color: aliceblue;
 }
 
 input {
   color: black;
+  margin: 10px;
+}
+button{
+  margin: 10px;
 }
 </style>
