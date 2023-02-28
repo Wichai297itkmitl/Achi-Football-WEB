@@ -1,7 +1,7 @@
 <template>
-<div class="container">
+<div class="container py-2">
     <div class="row">
-    <div class="col d-flex justify-content-center VueBg py-2">
+    <div class="col d-flex justify-content-center VueBg">
       <router-link to="/">
         <img src="@/assets/images/logo.png" />
       </router-link>
@@ -60,7 +60,7 @@
               <img src="@/assets/icons/user.svg">
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li style="background-color: #E0CB0A;"><a class="dropdown-item" href="#"><h2>เข้าสู่ระบบ</h2></a></li>
+              <li style="background-color: #E0CB0A;"><a class="dropdown-item" href="/login"><h2>เข้าสู่ระบบ</h2></a></li>
               <li class="dropdown-item disabled"><h4>หรือ</h4></li>
               <li style="background-color: #4DCC4B;"><a class="dropdown-item" href="#" ><h2>สมัครสมาชิก</h2></a></li>
             </ul>
