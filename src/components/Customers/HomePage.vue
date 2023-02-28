@@ -314,7 +314,11 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
+
+.VueBg {
+  background: #1a1818;
+}
   .move:hover{
     background-color: rgb(58, 58, 58);
   }
