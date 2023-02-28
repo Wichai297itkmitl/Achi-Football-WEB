@@ -10,6 +10,7 @@ import Register from "@/components/Customers/Register-user.vue";
 import Cart from "@/components/Customers/Cart-Page.vue";
 import ProductDetail from "@/components/Customers/Product-Detail.vue";
 import employeeSelect from "@/components/Employees/employeeSelect.vue";
+import emCon from "@/components/Employees/employeesConfirm.vue";
 // saasdas
 const routes = [
     {
@@ -46,7 +47,13 @@ const routes = [
         path:"/emSelect",
         name:"emSelect",
         component:employeeSelect
-    }
+    },
+    {
+        path:"/emCon",
+        name:"emConfirm",
+        component:emCon
+    },
+
 
 ]
 
