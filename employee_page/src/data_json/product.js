@@ -1,5 +1,6 @@
 
-    const  data = JSON.parse(`[
+const  data = 
+    [
         {
             product_id:10000001,
             pro_name:"NIKE Phantom GT2 Elite FG",
@@ -164,6 +165,7 @@
             amount:"2"
         }
         
-    ]`);
+    ]
    
  
+export default data;

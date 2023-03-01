@@ -1,5 +1,6 @@
 
-    data = [
+const  data = 
+    [
         {
             product_id:10000001,
             pro_name:"NIKE Phantom GT2 Elite FG",

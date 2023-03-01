@@ -10,18 +10,19 @@
     <Login v-else></Login>
   </div>
 
-  <Product v-if="fales"></Product>
+  <Product v-if="fales">
+  </Product>
   
   
 </template>
 
 <script>
 
-
+import Product from './data_json/product.js'
 import Login from './components/Login-employee_page.vue'
-import Product from '../data_json/product.js'
 
-console.log(data)
+
+
 export default {
 
   name: 'App',
@@ -32,12 +33,12 @@ export default {
   data(){
     return{
       login: true,
-      product:data
+      prd: Product
     }
   },
   created() {
-      localStorage.setItem("product_key",this.product);
-
+    console.log();
+      localStorage.setItem("product_key", JSON.stringify(this.prd));
   },
 }
 </script>
