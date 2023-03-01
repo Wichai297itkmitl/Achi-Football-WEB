@@ -5,8 +5,8 @@
         </title>
     </head>
 
-    <div class="container">
-        <div class="row py-2" style="color: aliceblue;">
+    <div class="container py-3">
+        <div class="row py-2 mx-4" style="color: aliceblue;">
             <!--  -->
             <div class="col-7">
                 <div class="row">
@@ -55,9 +55,30 @@
                     </div>
                 </div>
 
+                <div class="" v-show="new_address == false">
+                    <div class="row py-3 ">
+                        <div class="col">
+                            <div class="form-check">
+                                <input class="form-check-input py-2 px-2" type="radio" name="flexRadioDefault"
+                                    id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    ชื่อ: Wichai KommongKhun Tel: 0802535629 เลขที่ 1 ซอย ฉลองกรุง 1 แขวง ลาดกระบัง
+                                    เขตลาดกระบัง กรุงเทพมหานคร 10520
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row py-2">
+                        <div class="col text-center">
+                            <a href="#" style="color: #E3AF4A;" @click="new_address = true">
+                                <h5>เพิ่มที่อยู่จัดส่ง</h5>
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Add address -->
-                <div class="row py-3">
+                <div class="row py-3" v-show="new_address">
                     <div class="col">
                         <div class="col-5 py-1">
                             <label for="exampleFormControlInput1" class="form-label">ชื่อ *</label>
@@ -100,16 +121,23 @@
                                 <input type="text" class="form-control" placeholder="">
                             </div>
                         </div>
-                        <hr>
+                        <div class="row py-2">
+                            <div class="col-4 d-flex">
+                                <button type="button" class="btn btn-success" @click="new_address = false"
+                                    style="font-size: 20px;">บันทึกที่อยู่</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <!-- payment -->
                 <div class="row">
+                    <hr>
                     <div class="col-8">
+
                         <h3>ชำระเงิน</h3>
                         <div class="row py-3">
-                            <div class="col-5 d-flex">
+                            <div class="col-6 d-flex">
                                 <div class="form-check mx-2">
                                     <input class="form-check-input py-2 px-2" type="radio" name="flexRadioDefault"
                                         id="flexRadioDefault1">
@@ -119,7 +147,7 @@
                                     </label>
                                 </div>
                             </div>
-                            <div class="col-5">
+                            <div class="col-6">
                                 <div class="form-check mx-2">
                                     <input class="form-check-input py-2 px-2" type="radio" name="flexRadioDefault"
                                         id="flexRadioDefault1">
@@ -145,10 +173,10 @@
             </div>
 
 
-            <div class="col-5 py-4" style="background-color: #464646;">
+            <div class="col-5 py-4 s_fix rounded-start" style="background-color: #464646;">
                 <div class="row">
                     <div class="col text-center">
-                        <h1>สรุปคำสั่งซื้อ</h1>
+                        <h2>สรุปคำสั่งซื้อ</h2>
                     </div>
                 </div>
                 <div class="row py-2">
@@ -156,19 +184,19 @@
                         <h3>สินค้าในตระกร้า (2รายการ)</h3>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col order_flow">
+                <div class="row order_flow">
+                    <div class="col">
                         <table class="table " style="color:aliceblue">
                             <thead class="">
                                 <tr>
-                                    <th scope="col" ></th>
+                                    <th scope="col"></th>
                                     <th scope="col"></th>
                                 </tr>
                             </thead>
                             <tbody style="" class="">
                                 <tr v-for="index in 2" :key="index">
                                     <th class="">
-                                        <div class="card mb-1" style=" border: none; background-color: #464646;">
+                                        <div class="card" style=" border: none; background-color: #464646;">
                                             <div class="row g-0">
                                                 <div class="col-5">
                                                     <img src="https://www.futbolemotion.com/imagesarticulos/188051/grandes/bota-adidas-predator-accuracy-.3-fg-core-black-white-shock-pink-0.jpg"
@@ -187,14 +215,81 @@
                                             </div>
                                         </div>
                                     </th>
-                                    <td class="" style="width: fit-content"> <h3>x1</h3></td>
+                                    <td class="" style="width: fit-content">
+                                        <h3>x1</h3>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
+                <hr>
+                <div class="row">
+                    <div class="col">
+                        <div class="row py-1 mb-3">
+                            <div class="col-6">
+                                <h3 class="text-strat">ยอดรวม:</h3>
+                            </div>
+                            <div class="col-6">
+                                <h3 class="text-end">6500.00 THB</h3>
+                            </div>
+                        </div>
+                        <div class="row py-1 mb-3">
+                            <div class="col-6">
+                                <h3 class="text-strat">ค่าจัดส่ง:</h3>
+                            </div>
+                            <div class="col-6">
+                                <h3 class="text-end">80.00 THB</h3>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row py-1 mb-3">
+                            <div class="col-6">
+                                <h3 class="text-strat">ราคารวม:</h3>
+                            </div>
+                            <div class="col-6">
+                                <h3 class="text-end">6580.00 THB</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row py-4 my-3">
+                        <div class="col" style="color:aliceblue">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="#" style="color:aliceblue">
+                                        <h4>กดดูเงื่อนไขการสั่งซื้อ</h4>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row py-3">
+                                <div class="col">
+                                    <div class="form-check">
+                                        <input class="form-check-input py-3 px-3" type="checkbox" value=""
+                                            id="flexCheckDefault">
+                                        <label class="form-check-label mx-2" for="flexCheckDefault">
+                                            <h4>ยอมรับเงื่อนไขการสั่งซื้อสินค้าทั้งหมด</h4>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col d-flex">
+                                    <button type="button" class="btn btn-warning col-12 btn-lg"
+                                        style="font-size: 35px;">ดำเนินการชำระเงิน</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
 
+
+        </div>
+        <div class="row">
+            <div class="col" style="height: 200px !important;">
+                <!-- for future -->
+            </div>
         </div>
     </div>
 </template>
@@ -203,21 +298,25 @@
 export default {
     data() {
         return {
-
+            new_address: false
         }
     }
 }
 </script>
 
 <style scoped>
-.order_flow{
-    height: 600px;
+.order_flow {
+    height: 500px !important;
     overflow-y: auto;
     overflow-x: hidden;
-    -webkit-scrollbar-track: yellowgreen;
 }
 
-.tr_p{
+.tr_p {
     margin-top: -15px !important;
+
+}
+
+.s_fix {
+    max-height: 900px !important;
 }
 </style>

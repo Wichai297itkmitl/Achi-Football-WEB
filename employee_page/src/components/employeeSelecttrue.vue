@@ -86,6 +86,7 @@
             <div class="row">
                     <div class="col h_max">
                         <!-- for some think in future -->
+                        <img alt="" :src="img">
                     </div>
             </div>
         </div>
@@ -97,7 +98,8 @@
 export default {
     data() {
         return {
-            product_info: ''
+            product_info: '',
+            img: "adadasdasd"
         }
     },
     created(){

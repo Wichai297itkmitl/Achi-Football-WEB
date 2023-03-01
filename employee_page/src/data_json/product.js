@@ -8,7 +8,7 @@ const  data =
             price:"9,400",
             size:"40",
             color:"Black",
-            image:"1",
+            image:"",
             amount:"2"
         },
         {

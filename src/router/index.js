@@ -10,6 +10,7 @@ import Register from "@/components/Register-user.vue";
 import Cart from "@/components/Cart-Page.vue";
 import ProductDetail from "@/components/Product-Detail.vue";
 import User_info from "@/components/User-information.vue";
+import Check_out from "@/components/Check-out.vue";
 // saasdas
 const routes = [
     {
@@ -46,6 +47,11 @@ const routes = [
         path:"/account-information",
         name:"acc_info",
         component: User_info,
+    },
+    {
+        path:"/check-out",
+        name: "check-out",
+        component: Check_out
     }
 
 ]
