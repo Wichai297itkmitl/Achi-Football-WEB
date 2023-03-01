@@ -163,30 +163,9 @@
             "color":"Light Blue",
             "image":"15",
             "amount":"2"
-
         }
         
-    ],
-    "user":[
-        {
-            "user_id":"698235410",
-            "full_name":"Wichai Kommongkhun",
-            "date":"11/11/2022",
-            "email":"64070230@kmitl.ac.th",
-            "phone":"0802535629",
-            "username":"Wichai27",
-            "password":"big123456"
-        }
-    ] ,
-    "em":[
-        {
-            "em_id":"41570002",
-            "full_name":"Jack Grealish",
-            "date":"10/10/1995",
-            "email":"mancity@maci.com",
-            "phone":"099999999",
-            "password":"jack123456",
-            "admin_password":"54321"
-        }
     ]
+   
+ 
 }
