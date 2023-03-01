@@ -3,7 +3,7 @@
   <div class="container-fluid py-3 v_bg">
     <div class="row">
       <div class="col d-flex justify-content-center">
-        <a href="/"><img src="@/assets/logo.png" alt="" width="120"></a>
+        <a href="#" @click="go()"><img src="@/assets/logo.png" alt="" width="120"></a>
       </div>
     </div>
     <router-view v-if="login"></router-view>
@@ -18,13 +18,15 @@
 
 <script>
 
-import Product from './data_json/product.js'
-import Login from './components/Login-employee_page.vue'
+import Product from './data_json/product.js';
+import Login from './components/Login-employee_page.vue';
 
-
+// function read(){
+//   let re = localStorage.getItem("product_key");
+//   console.log(re);
+// }
 
 export default {
-
   name: 'App',
   components: {
     Login,
@@ -33,13 +35,23 @@ export default {
   data(){
     return{
       login: true,
-      prd: Product
+      prd: Product,
+      product_info:JSON.parse(localStorage.getItem("product_key")) 
     }
   },
   created() {
     console.log();
       localStorage.setItem("product_key", JSON.stringify(this.prd));
+      
   },
+  methods:{
+      go(){
+      let re = localStorage.getItem("product_key");
+      console.log(123);
+      console.log(JSON.parse(re));
+    }
+    
+  }
 }
 </script>
 

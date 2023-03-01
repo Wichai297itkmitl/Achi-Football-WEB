@@ -97,9 +97,13 @@
 export default {
     data() {
         return {
-
+            product_info: ''
         }
+    },
+    created(){
+        this.product_info = JSON.parse(localStorage.getItem("product_key"));
     }
+
 }
 </script>
     
