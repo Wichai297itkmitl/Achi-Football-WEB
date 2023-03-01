@@ -3,19 +3,13 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.min.js'
 import "bootstrap-icons/font/bootstrap-icons.css";
 //import navBar from "@/components/navBar.vue";
-import HomePage from "@/components/Customers/HomePage.vue";
-import List_Product from "@/components/Customers/List-Product.vue";
-import Login from "@/components/Customers/Login-user.vue";
-import Register from "@/components/Customers/Register-user.vue";
-import Cart from "@/components/Customers/Cart-Page.vue";
-import ProductDetail from "@/components/Customers/Product-Detail.vue";
-import User_info from "@/components/Customers/User-information.vue";
-import employeeSelect from "@/components/Employees/employeeSelect.vue";
-import emCon from "@/components/Employees/employeesConfirm.vue";
-import emSelecttrue from "@/components/Employees/employeeSelecttrue.vue";
-import emCondetail from "@/components/Employees/employeeProductdetail.vue";
-import emChangePro from "@/components/Employees/employeeChangePro.vue";
-import emAddPro from "@/components/Employees/employeeAddpro.vue";
+import HomePage from "@/components/HomePage.vue";
+import List_Product from "@/components/List-Product.vue";
+import Login from "@/components/Login-user.vue";
+import Register from "@/components/Register-user.vue";
+import Cart from "@/components/Cart-Page.vue";
+import ProductDetail from "@/components/Product-Detail.vue";
+import User_info from "@/components/User-information.vue";
 // saasdas
 const routes = [
     {
@@ -49,40 +43,10 @@ const routes = [
         component: ProductDetail
     },
     {
-        path:"/emSelect",
-        name:"emSelect",
-        component:employeeSelect
-    },
-    {
         path:"/account-information",
         name:"acc_info",
         component: User_info,
-    },{
-        path:"/emCon",
-        name:"emConfirm",
-        component:emCon
-    },
-    {
-        path:"/emSelecttrue",
-        name:"emSelecttrue",
-        component:emSelecttrue
-    },
-    {
-        path:"/emProde",
-        name:"emSelecttrue",
-        component:emCondetail
-    },
-    {
-        path:"/emChangePro",
-        name: "emchangeProduct",
-        component:emChangePro
-    },
-    {
-        path:"/emAddPro",
-        name:"emAddProduct",
-        component:emAddPro
-    },
-
+    }
 
 ]
 

@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import navBar from './components/Customers/navBar.vue'
-import Footer from './components/Customers/Achi-Footer.vue'
+import navBar from './components/navBar.vue'
+import Footer from './components/Achi-Footer.vue'
 
 export default {
   name: 'App',
