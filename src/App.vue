@@ -10,7 +10,7 @@
 <script>
 import navBar from './components/navBar.vue'
 import Footer from './components/Achi-Footer.vue'
-
+// import Product from '../data_json/product'
 export default {
   name: 'App',
   components: {
