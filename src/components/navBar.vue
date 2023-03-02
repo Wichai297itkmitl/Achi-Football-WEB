@@ -83,9 +83,9 @@
                 role="button" data-bs-toggle="dropdown" aria-expanded="false"> </a>-->
               
             <ul class="dropdown-menu bg-secondary" aria-labelledby="navbarDropdown">
-              <li><h3><a href="#" class="modi-a">บันชีของฉัน</a></h3></li>
-              <li><h3><a href="#" class="modi-a">ประวัติการสั่งซื้อ</a></h3></li>
-              <li><h3><a href="#" class="modi-a">สินค้าที่สนใจ</a></h3></li>
+              <li><h3><a href="/account-information" class="modi-a">บันชีของฉัน</a></h3></li>
+              <li><h3><a href="/order_his" class="modi-a">ประวัติการสั่งซื้อ</a></h3></li>
+              <li><h3><a href="/pro_star" class="modi-a">สินค้าที่สนใจ</a></h3></li>
               <li><h3><a :href="url" @click="log_out()" class="" style="color: #E7CB0A;">ออกจากระบบ</a></h3></li>
             </ul>
           </li>
