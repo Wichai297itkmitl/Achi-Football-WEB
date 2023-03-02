@@ -7,35 +7,35 @@
         <hr style="color:aliceblue">
         <div class="row py-2">
             <div class="col-3 border-end">
-        <div class="d-flex py-2">
-          <a href="/emInfo" style="color:aliceblue; text-decoration: none;">
-            <h3>บัญชีของฉัน</h3>
-          </a>
-          <img src="logo.png" alt="">
-        </div>
-        <div class="d-flex py-2">
-          <a href="/employeeSelect" style="color:aliceblue; text-decoration: none;">
-            <h3>รายการคำสั่งซื้อ</h3>
-          </a>
-        </div>
-        <div class="d-flex py-2">
-          <a href="/emCon" style="color:aliceblue; text-decoration: none;">
-            <h3>ส่งเลขติดตามพัศดุ</h3>
-          </a>
-        </div>
+                <div class="d-flex py-2">
+                    <a href="/emInfo" style="color:aliceblue; text-decoration: none;">
+                        <h3>บัญชีของฉัน</h3>
+                    </a>
+                    <img src="logo.png" alt="">
+                </div>
+                <div class="d-flex py-2">
+                    <a href="/employeeSelect" style="color:aliceblue; text-decoration: none;">
+                        <h3>รายการคำสั่งซื้อ</h3>
+                    </a>
+                </div>
+                <div class="d-flex py-2">
+                    <a href="/emCon" style="color:aliceblue; text-decoration: none;">
+                        <h3>ส่งเลขติดตามพัศดุ</h3>
+                    </a>
+                </div>
 
-        <div class="d-flex py-2">
-          <a href="/emSelecttrue" style="color:aliceblue; text-decoration: none;">
-            <h3>จัดการสินค้าในคลัง</h3>
-          </a>
-        </div>
-        <div class="d-flex py-2">
-          <a href="#" style="color:aliceblue;">
-            <h3>ออกจากระบบ</h3>
-          </a>
-          <img src="logo.png" alt="">
-        </div>
-      </div>
+                <div class="d-flex py-2">
+                    <a href="/emSelecttrue" style="color:aliceblue; text-decoration: none;">
+                        <h3>จัดการสินค้าในคลัง</h3>
+                    </a>
+                </div>
+                <div class="d-flex py-2">
+                    <a href="#" style="color:aliceblue;">
+                        <h3>ออกจากระบบ</h3>
+                    </a>
+                    <img src="logo.png" alt="">
+                </div>
+            </div>
 
             <div class="col mx-3" style="color:aliceblue" v-show="edit_active == false">
                 <div class="row">
@@ -210,6 +210,10 @@ export default {
 </script>
 
 <style>
+.h_max {
+    height: 550px !important;
+}
+
 .fix_data {
     color: rgb(255, 255, 255);
     text-decoration: none;

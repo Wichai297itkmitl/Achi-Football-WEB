@@ -45,13 +45,13 @@
                     <div class="col-7 d-flex ">
                         <h5>ชื่อสินค้า :</h5>
                         <div class="col mx-2">
-                            <input type="text" value="" class="form-control">
+                            <input type="text" class="form-control" v-model="p_name">
                         </div>
                     </div>
                     <div class="col-4 d-flex">
                         <h5>แบรนด์ :</h5>
                         <div class="col mx-2">
-                            <input type="text" value="" class="form-control">
+                            <input type="text" class="form-control" v-model="brand">
                         </div>
                     </div>
                 </div>
@@ -60,20 +60,20 @@
                     <div class="col-4 d-flex ">
                         <h5>ราคา :</h5>
                         <div class="col mx-2">
-                            <input type="text" value="" class="form-control">
+                            <input type="text" class="form-control" v-model="price">
                         </div>
                     </div>
                     <div class="col-4 d-flex">
                         <h5>ขนาด :</h5>
                         <div class="col mx-2">
-                            <input type="number" value="" class="form-control">
+                            <input type="number" class="form-control" v-model="size">
                         </div>
                         <h6 style="color: yellow;" class="mt-2">หมายเหตุ* หน่วยเป็น EU</h6>
                     </div>
                     <div class="col-4 d-flex">
                         <h5>สี :</h5>
                         <div class="col mx-2">
-                            <input type="text" value="" class="form-control">
+                            <input type="text" class="form-control" v-model="color">
                         </div>
                         <h6 style="color: yellow;" class="mt-2">ตัวอย่าง Red/blue/pink</h6>
                     </div>
@@ -83,21 +83,21 @@
                     <div class="col-3 d-flex ">
                         <h5>จำนวน :</h5>
                         <div class="col mx-2">
-                            <input type="number" value="" class="form-control">
+                            <input type="number" class="form-control" v-model="amount">
                         </div>
                     </div>
                     <div class="col-6 d-flex mx-4">
                         <h5>อัพโหลดรูปภาพ :</h5>
                         <div class="col mx-2">
-                            <input type="file" value="" class="form-control">
+                            <input type="file" class="form-control">
                         </div>
                     </div>
                 </div>
 
                 <div class="row py-2">
-                    <div class="col d-flex">
-                        <button type="button" class="btn btn-lg btn-success mx-2" @click="add_pro">เพิ่มสินค้า</button>
-                        <button type="button" class="btn btn-lg btn-danger mx-2">ล้างข้อมูล</button>
+                    <div class="col-4 d-flex py-2">
+                        <button type="submit" class="btn btn-lg btn-success mx-2 py-3" @click="add_pro">เพิ่มสินค้า</button>
+                        <!-- <button type="button" class="btn btn-lg btn-danger mx-2">ล้างข้อมูล</button> -->
                     </div>
                 </div>
 
@@ -117,23 +117,30 @@
 export default {
     data() {
         return {
-            p_id:0,
-            p_name:'',
+            p_id: 0,
+            p_name: '',
             brand: '',
             size: 0,
             color: '',
             amount: '',
+            img: ''
         }
     },
-    methods(){
-        return{
-            add_pro(){
-                this.p_id
-            }
+    methods: {
+        add_pro() {
+            alert(`Add Product complete \n
+                     Product_id: ${this.p_id} \n
+                     Brand: ${this.brand}\n
+                     Name: ${this.p_name} \n
+                     Color: ${this.color}\n
+                     Size: ${this.size} \n
+                     Amount: ${this.amount}`);
+            window.location.reload
         }
+
     },
     created() {
-        
+        this.p_id = Math.floor(Math.random() * (19999999 - 10000016 + 1)) + 10000016
     },
 }
 </script>

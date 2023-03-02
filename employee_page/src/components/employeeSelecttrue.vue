@@ -27,7 +27,7 @@
             </div>
 
 
-            <div class="col-9">
+            <div class="col-9 mx-3">
                 <div class="row" style="color:aliceblue;">
                     <div class="col">
                         <h4>รหัสพนักงาน 12345</h4>
@@ -56,7 +56,7 @@
                                     <th></th>
                                 </tr>
                             </thead>
-                            <tbody class=""  >
+                            <tbody style="background-color: #222222; font-size: 20px; display: block;" class="flow2">
                                 <tr class="size_tr" v-for="(item, index) in product_info" :key="item" :index="index" 
                                 v-show="item.product_id.toString().includes(search)"> 
                                     <!-- v-if="item.product_id.includes(search)" -->
@@ -95,7 +95,8 @@ export default {
         return {
             product_info: '',
             admin_info: '',
-            search: ''
+            search: '',
+
         }
     },
     created(){
@@ -113,8 +114,31 @@ export default {
 
 </script>
     
-<style>
-.h_max{
-    height: 550px !important;
+<style scoped>
+
+
+thead, tbody tr {
+    display:table;
+    width:100%;
+    table-layout:fixed;
+}
+
+*::-webkit-scrollbar {
+  width: 25px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgb(63, 63, 63);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(140, 105, 0);
+}
+
+
+.flow2 {
+    max-height: 600px !important;
+    overflow: auto;
+    overflow-x: hidden;
 }
 </style>

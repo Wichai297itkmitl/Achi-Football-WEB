@@ -3,7 +3,7 @@
   <div class="container-fluid py-3 v_bg">
     <div class="row">
       <div class="col d-flex justify-content-center">
-        <a href="#" @click="go()"><img src="@/assets/logo.png" alt="" width="120"></a>
+        <a href="/employeeSelect" @click="go()"><img src="@/assets/logo.png" alt="" width="120"></a>
       </div>
     </div>
     <router-view v-if="login"></router-view>
