@@ -47,7 +47,7 @@
           <div class="col-12 d-flex">
             <label for="">ค้นหาคำสั่งซื้อ :</label>
             <div class="col-2 mx-3 input-group-sm">
-              <input type="text" placeholder="ระบุเลขที่คำสั่งซื้อ" class="form-control" />
+              <input type="text" placeholder="ระบุเลขที่คำสั่งซื้อ" class="form-control" v-model="search" />
             </div>
             <label for="">แสดงคำสั่งซื้อวันที่ :</label>
             <div class="col-2 mx-3 input-group-sm">
@@ -68,31 +68,20 @@
                   <th></th>
                 </tr>
               </thead>
+              <!-- v-show="item.order_number.toString().includes(search)" -->
               <tbody style="background-color: #222222; color: aliceblue">
-                <tr class="size_tr">
-                  <td>1564486</td>
-                  <td>26-02-2023</td>
-                  <td>1820 THB</td>
-                  <td>ชำระเงินสำเร็จ</td>
+                <tr class="size_tr" v-for="item in order" :key="item"
+                 v-show="item.order_number.toString().includes(search) && (!item.tag_number == true ? true: false)"
+                 >
+                  <td>{{ item.order_number }}</td>
+                  <td>{{ item.date_sales }}</td>
+                  <td>{{ sumPrice(item.chart) }} THB</td>
+                  <td>{{ item.pay_success }}</td>
                   <td>
-                    <input type="text" class="form-control input-group-sm form-cc" />
+                    <input type="text" class="form-control input-group-sm form-cc" v-model="send" />
                   </td>
                   <td>
-                    <button type="button" class="btn btn-sm btn-warning">
-                      ยืนยัน
-                    </button>
-                  </td>
-                </tr>
-                <tr class="size_tr">
-                  <td>1564486</td>
-                  <td>26-02-2023</td>
-                  <td>1820 THB</td>
-                  <td>ชำระเงินสำเร็จ</td>
-                  <td>
-                    <input type="text" class="form-control input-group-sm form-cc" />
-                  </td>
-                  <td>
-                    <button type="button" class="btn btn-sm btn-warning">
+                    <button type="button" class="btn btn-sm btn-warning" @click="sendTag()">
                       ยืนยัน
                     </button>
                   </td>
@@ -137,10 +126,14 @@
 </template>
   
 <script>
+import order from '../data_json/orders.js';
 export default {
   data() {
     return {
       employee_ID: localStorage.getItem("employee_id"),
+      order: order,
+      send: '',
+      search: '',
     };
   },
   methods: {
@@ -148,6 +141,16 @@ export default {
       localStorage.removeItem('Is_login');
       localStorage.removeItem('employee_id');
       window.location.href = '/login';
+    },
+    sumPrice(cart){
+        var sum = 0;
+        cart.forEach(el => {
+          sum += el.price;
+        });
+        return sum;
+    },
+    sendTag(){
+      alert("ส่งเลข " + this.send)
     }
   }
 };
