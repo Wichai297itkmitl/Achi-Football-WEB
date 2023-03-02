@@ -20,7 +20,7 @@
 <script>
 
 import Product from './data_json/product.js';
-import Admin from './data_json/admin.js';
+import Admin from './data_json/admmin.js';
 import Login from './components/Login-employee_page.vue';
 
 // function read(){

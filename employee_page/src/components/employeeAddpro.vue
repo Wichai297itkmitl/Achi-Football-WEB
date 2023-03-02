@@ -37,7 +37,7 @@
                 <div class="row">
                     <div class="col">
                         <br>
-                        <h3>รหัสสินค้า : 146465465</h3>
+                        <h3>รหัสสินค้า : {{ p_id }}</h3>
                     </div>
                 </div>
 
@@ -96,7 +96,7 @@
 
                 <div class="row py-2">
                     <div class="col d-flex">
-                        <button type="button" class="btn btn-lg btn-success mx-2">เพิ่มสินค้า</button>
+                        <button type="button" class="btn btn-lg btn-success mx-2" @click="">เพิ่มสินค้า</button>
                         <button type="button" class="btn btn-lg btn-danger mx-2">ล้างข้อมูล</button>
                     </div>
                 </div>
@@ -117,9 +117,24 @@
 export default {
     data() {
         return {
-
+            p_id:0,
+            p_name:'',
+            brand: '',
+            size: 0,
+            color: '',
+            amount: '',
         }
-    }
+    },
+    methods(){
+        return{
+            add_pro(){
+
+            }
+        }
+    },
+    created() {
+        
+    },
 }
 </script>
     

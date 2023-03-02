@@ -9,7 +9,7 @@ const  data =
             size:"40",
             color:"Black",
             image:"",
-            amount:"2"
+            amount:2
         },
         {
             product_id:20000001,
@@ -19,7 +19,7 @@ const  data =
             size:"42",
             color:"Blue",
             image:"2",
-            amount:"1"
+            amount:1
 
         },
         {
@@ -30,7 +30,7 @@ const  data =
             size:"44",
             color:"White",
             image:"3",
-            amount:"3"
+            amount:3
 
         },
         {
@@ -41,7 +41,7 @@ const  data =
             size:"41",
             color:"Red",
             image:"4",
-            amount:"2"
+            amount:2
 
         },
         {
@@ -52,7 +52,7 @@ const  data =
             size:"40",
             color:"Green",
             image:"5",
-            amount:"1"
+            amount:1
 
         },
         {
@@ -63,7 +63,7 @@ const  data =
             size:"43",
             color:"White",
             image:"6",
-            amount:"2"
+            amount:2
 
         },
         {
@@ -74,7 +74,7 @@ const  data =
             size:"40",
             color:"White",
             image:"7",
-            amount:"3"
+            amount:3
 
         },
         {
@@ -85,7 +85,7 @@ const  data =
             size:"40",
             color:"Gold",
             image:"8",
-            amount:"2"
+            amount:2
 
         },
         {
@@ -96,7 +96,7 @@ const  data =
             size:"44",
             color:"White",
             image:"9",
-            amount:"1"
+            amount:1
 
         },
         {
@@ -107,7 +107,7 @@ const  data =
             size:"42",
             color:"Black",
             image:"10",
-            amount:"2"
+            amount:2
 
         },
         {
@@ -118,7 +118,7 @@ const  data =
             size:"41",
             color:"Black",
             image:"11",
-            amount:"1"
+            amount:1
 
         },
         {
@@ -129,7 +129,7 @@ const  data =
             size:"41",
             color:"Black",
             image:"12",
-            amount:"1"
+            amount:1
 
         },
         {
@@ -140,7 +140,7 @@ const  data =
             size:"43",
             color:"Black",
             image:"13",
-            amount:"2"
+            amount:2
 
         },
         {
@@ -151,7 +151,7 @@ const  data =
             size:"41",
             color:"White",
             image:"14",
-            amount:"3"
+            amount:3
 
         },
         {
@@ -162,7 +162,7 @@ const  data =
             size:"46",
             color:"Light Blue",
             image:"15",
-            amount:"2"
+            amount:2
         }
         
     ]

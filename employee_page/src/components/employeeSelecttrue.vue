@@ -57,7 +57,8 @@
                                 </tr>
                             </thead>
                             <tbody class=""  >
-                                <tr class="size_tr" v-for="item in product_info" :key="item" > 
+                                <tr class="size_tr" v-for="(item, index) in product_info" :key="item" :index="index" 
+                                v-show="item.product_id.toString().includes(search)"> 
                                     <!-- v-if="item.product_id.includes(search)" -->
                                     <td >{{item.product_id}}</td>
                                     <td style="max-width: 200px !important;">{{ item.pro_name }}</td>
@@ -65,7 +66,7 @@
                                     <td>{{item.price}}</td>
                                     <td class="text-center">{{item.amount}}</td>
                                     <td style="text-decoration: underline; color: yellow;">
-                                        <a href="#" style="color: yellow;">ข้อมูลเพิ่มเติม</a>
+                                        <a :href="'/emProde?pro_id='+item.product_id" style="color: yellow;">ข้อมูลเพิ่มเติม</a>
                                     </td>
                                 </tr>
                                 
@@ -79,7 +80,7 @@
                     <div class="col h_max" >
                         <!-- for some think in future -->
                         {{ admin_info }}
-                        <img alt="" :src="img">
+                        <!-- <img alt="" :src="img"> -->
                     </div>
             </div>
         </div>
@@ -93,17 +94,20 @@ export default {
     data() {
         return {
             product_info: '',
-            admin_info: ''
+            admin_info: '',
+            search: "",
 
         }
     },
     created(){
         this.product_info = JSON.parse(localStorage.getItem("product_key"));
         this.admin_info = JSON.parse(localStorage.getItem("admin_key"));
+        console.log(this.product_info);
+        console.log(this.product_info.length);
     },
     watch:{
-        search(newVal){
-            this.product_info = this.product_info.filter(person =>(person.product_id).includes(newVal)) 
+        search(newVal, oldVal){
+            console.log(newVal, oldVal);
         }
     }
 
@@ -113,6 +117,6 @@ export default {
     
 <style>
 .h_max{
-    height: 600px !important;
+    height: 550px !important;
 }
 </style>
