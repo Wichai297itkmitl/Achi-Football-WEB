@@ -19,7 +19,7 @@ const order =[{
         size:40,
         color:"Black",
         chart_id:1,
-        price:"9,400",
+        price:"9400",
         pro_name:"NIKE Phantom GT2 Elite FG"
         },
         {
@@ -28,7 +28,7 @@ const order =[{
         size:42,
         color:"Blue",
         chart_id:1,
-        price:"4,900",
+        price:"4900",
         pro_name:"ADIDAS X Speedflow.2 FG"
         } 
        ]

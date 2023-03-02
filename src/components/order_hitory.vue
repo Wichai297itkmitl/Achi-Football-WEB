@@ -33,7 +33,7 @@
                 </div>
             </div>
 
-            <div class="col mx-5 " style="color:aliceblue" v-show="edit_active == false">
+            <div class="col mx-5 " style="color:aliceblue" v-show="edit_active == false" v-for="item in order_info" :key="item">
                 <div class="row">
                     <div class="col-10">
                         <h2>ประวัติการสั่งซื้อ</h2>
@@ -42,11 +42,11 @@
                     <div class="col-12" style="border: 1px solid white; height: 20%;">
 
                         <div style="height: 2rem;">
-                            <h6 style="display: inline;">รายการคำสั่งซื้อล่าสุด วันที่ {{ order_info[0].date_sales }}</h6>
+                            <h6 style="display: inline;">รายการคำสั่งซื้อล่าสุด วันที่ {{ item.date_sales }}</h6>
                             <button class="btn btn-danger btn"
                                 style="display: inline; margin-left: 85%; margin-top: -2%; width: 100px; margin-bottom: 0%;">ดูคำสั่งซื้อ</button>
                         </div>
-                        <h5 style="color: yellow;">เลขที่คำสั่งซื้อ: {{ order_info[0].order_number }}</h5>
+                        <h5 style="color: yellow;">เลขที่คำสั่งซื้อ: {{ item.order_number }}</h5>
                         <img src="https://cdn.discordapp.com/attachments/954014737979564052/1080804648321040444/image.png"
                             style="margin-left: 25%; width: 50%; margin-bottom: 5%;" alt="">
 
@@ -67,12 +67,12 @@
                                 </thead>
                                 <tbody style="background-color: #222222; color: aliceblue;">
                                     <tr class="size_tr">
-                                        <td>{{ order_info[0].order_number }}</td>
-                                        <td>{{ order_info[0].date_sales }}</td>
-                                        <td>{{ order_info[0].chart[0].price }} Bath</td>
-                                        <td>{{ order_info[0].pay_success }}</td>
-                                        <td>{{ order_info[0].tax_order }}</td>
-                                        <td><a href="#" style="color: aliceblue;">รายละเอียด</a></td>
+                                        <td>{{ item.order_number }} </td>
+                                        <td>{{ item.date_sales }}</td>
+                                        <td>{{ parseInt(item.chart[0].price) + parseInt(item.chart[1].price)}} Bath</td>
+                                        <td>{{ item.pay_success }}</td>
+                                        <td>{{ item.tax_order }}</td>
+                                        <td><a :href="'/order_de?oid='+item.order_number+'pri='+item.price" style="color: aliceblue;" >รายละเอียด</a></td>
                                     </tr>
 
 

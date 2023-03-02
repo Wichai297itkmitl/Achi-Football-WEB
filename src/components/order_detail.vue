@@ -5,14 +5,14 @@
         </title>
     </head>
 
-    <div class="container py-3">
+    <div class="container py-3" v-for="item in order_info" :key="item">
         <div class="col-12" style="border: 1px solid white; height: 20%; margin-bottom: 3%; ">
 
             <div style="height: 2rem; margin-left: 2%;" >
-                <h6 style="display: inline; color: aliceblue; ">รายการคำสั่งซื้อล่าสุด วันที่ {{ order_info[0].date_sales }}</h6>
+                <h6 style="display: inline; color: aliceblue; ">รายการคำสั่งซื้อล่าสุด วันที่ {{ item.date_sales }}</h6>
                 
             </div>
-            <h5 style="color: yellow;  margin-left: 2%;">เลขที่คำสั่งซื้อ: {{ order_info[0].order_number }}</h5>
+            <h5 style="color: yellow;  margin-left: 2%;">เลขที่คำสั่งซื้อ: {{ item.order_number }}</h5>
             <img src="https://cdn.discordapp.com/attachments/954014737979564052/1080813386696249424/image.png"
                 style="margin-left: 25%; width: 50%; margin-bottom: 5%;" alt="">
 
@@ -30,27 +30,27 @@
                     <div class="col-10">
                         <div class="row py-1">
                             <h5 style="display: inline;">จัดส่งคินค้าวันที่ <span>
-                                    <h5 style="display: inline;">{{ order_info[0].date_delively }}</h5>
+                                    <h5 style="display: inline;">{{ item.date_delively }}</h5>
                                 </span></h5>
                         </div>
                         <div class="row py-1">
                             <h5 style="display: inline;">วันที่ทำรายการ <span>
-                                    <h5 style="display: inline;">{{ order_info[0].date_sales }}</h5>
+                                    <h5 style="display: inline;">{{ item.date_sales }}</h5>
                                 </span></h5>
                         </div>
                         <div class="row py-1">
                             <h5 style="display: inline;">วิธีการชำระเงิน <span>
-                                    <h5 style="display: inline;">{{ order_info[0].paymeent }}</h5>
+                                    <h5 style="display: inline;">{{ item.paymeent }}</h5>
                                 </span></h5>
                         </div>
                         <div class="row py-1">
                             <h5 style="display: inline;">วิธีการจัดส่ง <span>
-                                    <h5 style="display: inline;">{{order_info[0].delivery }}</h5>
+                                    <h5 style="display: inline;">{{item.delivery }}</h5>
                                 </span></h5>
                         </div>
                         <div class="row py-1">
                             <h5 style="display: inline;">สถานะการชำระเงิน <span>
-                                    <h5 style="display: inline;">{{ order_info[0].pay_success }}</h5>
+                                    <h5 style="display: inline;">{{ item.pay_success }}</h5>
                                 </span></h5>
                         </div>
 
@@ -66,12 +66,12 @@
                     <div class="col-10">
                         <div class="row py-1">
                             <h5 style="display: inline;">ชื่อ <span>
-                                    <h5 style="display: inline;">{{ order_info[0].name }}</h5>
+                                    <h5 style="display: inline;">{{ item.name }}</h5>
                                 </span></h5>
                         </div>
                         <div class="row py-1">
-                            <h5 style="display: inline;">{{order_info[0].address}}</h5>
-                            <h5 style="display: inline;">เบอร์โทร {{ order_info[0].phone }}</h5>
+                            <h5 style="display: inline;">{{item.address}}</h5>
+                            <h5 style="display: inline;">เบอร์โทร {{ item.phone }}</h5>
                         </div>
 
 
@@ -140,7 +140,7 @@
                                 <h3 class="text-strat">ยอดรวม:</h3>
                             </div>
                             <div class="col-6">
-                                <h3 class="text-end">{{ total }} THB</h3>
+                                <h3 class="text-end">{{ parseInt(item.chart[0].price) + parseInt(item.chart[1].price)}} THB</h3>
                             </div>
                         </div>
                         <div class="row py-1 mb-3">
@@ -157,7 +157,7 @@
                                 <h3 class="text-strat">ราคารวม:</h3>
                             </div>
                             <div class="col-6">
-                                <h3 class="text-end">6580.00 THB</h3>
+                                <h3 class="text-end">{{ parseInt(item.chart[0].price) + parseInt(item.chart[1].price)+parseInt(item.total_delivery)}} THB</h3>
                             </div>
                         </div>
                     </div>
@@ -181,16 +181,21 @@ export default {
     data() {
         return {
             new_address: false,
-            order_info:''
+            order_info:'',
+            oid:'',
+            pri:''
         }
     },
     created(){
         this.order_info = JSON.parse(localStorage.getItem("order_key"));
+        const ae = new URLSearchParams(window.location.search);
+        this.oid = ae.get("oid");
+        this.pri = ae.get("pri");
     },
     computed:{
         total(){
             return this.order_info.reduce((total,curr_product) =>{
-                return total+(curr_product.price)
+                return total+(curr_product.chart.price)
             },0)
         }
     }
