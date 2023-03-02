@@ -13,6 +13,7 @@ import User_info from "@/components/User-information.vue";
 import Check_out from "@/components/Check-out.vue";
 import pro_star from "@/components/product_star.vue";
 import order_his from "@/components/order_hitory.vue";
+import order_de from "@/components/order_detail.vue";
 // saasdas
 const routes = [
     {
@@ -64,6 +65,11 @@ const routes = [
         path:"/order_his",
         name:"order_history",
         component:order_his
+    },
+    {
+        path:"/order_de",
+        name:"order_detail",
+        component:order_de
     }
 
 ]

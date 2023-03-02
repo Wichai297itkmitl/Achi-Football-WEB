@@ -37,49 +37,51 @@
                 <div class="row">
                     <div class="col-10">
                         <h2>ประวัติการสั่งซื้อ</h2>
-                        <hr size ="20px">
+                        <hr size="20px">
                     </div>
                     <div class="col-12" style="border: 1px solid white; height: 20%;">
-                        
+
                         <div style="height: 2rem;">
                             <h6 style="display: inline;">รายการคำสั่งซื้อล่าสุด วันที่ {{ date }}</h6>
-                            <button class="btn btn-danger btn"  style="display: inline; margin-left: 85%; margin-top: -2%; width: 100px; margin-bottom: 0%;">ดูคำสั่งซื้อ</button>
+                            <button class="btn btn-danger btn"
+                                style="display: inline; margin-left: 85%; margin-top: -2%; width: 100px; margin-bottom: 0%;">ดูคำสั่งซื้อ</button>
                         </div>
-                        <h5 style="color: yellow;">เลขที่คำสั่งซื้อ: {{id}}</h5>
-                        <img src="https://cdn.discordapp.com/attachments/954014737979564052/1080804648321040444/image.png" style="margin-left: 25%; width: 50%; margin-bottom: 5%;" alt="">
+                        <h5 style="color: yellow;">เลขที่คำสั่งซื้อ: {{ id }}</h5>
+                        <img src="https://cdn.discordapp.com/attachments/954014737979564052/1080804648321040444/image.png"
+                            style="margin-left: 25%; width: 50%; margin-bottom: 5%;" alt="">
 
                     </div>
                     <div class="row">
 
-          <div class="col-12" style="margin-top: 5%;">
-            <table class="table">
-              <thead style="background-color: #505050; color: aliceblue;">
-                <tr>
-                  <th>เลขที่คำสั่งซื้อ</th>
-                  <th>วันที่สั่งซื้อ</th>
-                  <th>ราคารวม</th>
-                  <th>การชำระเงิน</th>
-                  <th>เลขติดตามพัสดุ</th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody style="background-color: #222222; color: aliceblue;">
-                <tr class="size_tr">
-                  <td>{{id}}</td>
-                  <td>{{date}}</td>
-                  <td>1820 THB</td>
-                  <td>ชำระเงินสำเร็จ</td>
-                  <td>FAS5654543151</td>
-                  <td><a href="#" style="color: aliceblue;">รายละเอียด</a></td>
-                </tr>
-                
-                
-              </tbody>
-            </table>
-          </div>
-        </div>
-                        
-                    
+                        <div class="col-12" style="margin-top: 5%;">
+                            <table class="table">
+                                <thead style="background-color: #505050; color: aliceblue;">
+                                    <tr>
+                                        <th>เลขที่คำสั่งซื้อ</th>
+                                        <th>วันที่สั่งซื้อ</th>
+                                        <th>ราคารวม</th>
+                                        <th>การชำระเงิน</th>
+                                        <th>เลขติดตามพัสดุ</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody style="background-color: #222222; color: aliceblue;">
+                                    <tr class="size_tr">
+                                        <td>{{ id }}</td>
+                                        <td>{{ date }}</td>
+                                        <td>1820 THB</td>
+                                        <td>ชำระเงินสำเร็จ</td>
+                                        <td>FAS5654543151</td>
+                                        <td><a href="#" style="color: aliceblue;">รายละเอียด</a></td>
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
 
@@ -95,8 +97,8 @@ export default {
     data() {
         return {
             edit_active: false,
-            id:264445,
-            date:"26-02-2023"
+            id: 264445,
+            date: "26-02-2023"
         }
     },
 }
