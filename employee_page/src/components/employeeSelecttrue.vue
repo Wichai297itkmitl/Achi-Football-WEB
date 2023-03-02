@@ -78,9 +78,7 @@
             <div class="row" >
                     <div class="col h_max" >
                         <!-- for some think in future -->
-                        <br> 
-                        <br>
-                       
+                        {{ admin_info }}
                         <img alt="" :src="img">
                     </div>
             </div>
@@ -95,11 +93,13 @@ export default {
     data() {
         return {
             product_info: '',
+            admin_info: ''
 
         }
     },
     created(){
         this.product_info = JSON.parse(localStorage.getItem("product_key"));
+        this.admin_info = JSON.parse(localStorage.getItem("admin_key"));
     },
     watch:{
         search(newVal){

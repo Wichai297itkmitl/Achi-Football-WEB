@@ -13,12 +13,14 @@
   <Product v-if="fales">
   </Product>
   
-  
+  <Admin v-if="fales">
+  </Admin>
 </template>
 
 <script>
 
 import Product from './data_json/product.js';
+import Admin from './data_json/admin.js';
 import Login from './components/Login-employee_page.vue';
 
 // function read(){
@@ -30,25 +32,32 @@ export default {
   name: 'App',
   components: {
     Login,
-    Product
+    Product,
+    Admin
   },
   data(){
     return{
       login: true,
       prd: Product,
-      product_info:JSON.parse(localStorage.getItem("product_key")) 
+      adm: Admin,
+      product_info:JSON.parse(localStorage.getItem("product_key")), 
+      admin_info:JSON.parse(localStorage.getItem("admin_key"))
     }
   },
   created() {
     console.log();
       localStorage.setItem("product_key", JSON.stringify(this.prd));
-      
+      localStorage.setItem("admin_key" ,JSON.stringify(this.adm));
+      console.log();
   },
+
   methods:{
       go(){
       let re = localStorage.getItem("product_key");
+      let ke = localStorage.getItem("admin_key");
       console.log(123);
       console.log(JSON.parse(re));
+      console.log(JSON.parse(ke));
     }
     
   }
