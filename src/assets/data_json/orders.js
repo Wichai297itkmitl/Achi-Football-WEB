@@ -10,6 +10,8 @@ const order =[{
        date_sales:" 26-02-2566",
        order_number:"18059001",
        delivery_status:"จัดส่งสินค้าเรียบร้อย",
+       tax_order:"FAS5654543151",
+       total_delivery:80,
        chart:[
         {
         product_id:10000001,
@@ -17,7 +19,8 @@ const order =[{
         size:40,
         color:"Black",
         chart_id:1,
-        price:9400
+        price:"9,400",
+        pro_name:"NIKE Phantom GT2 Elite FG"
         },
         {
         product_id:20000001,
@@ -25,8 +28,10 @@ const order =[{
         size:42,
         color:"Blue",
         chart_id:1,
-        price:4900
+        price:"4,900",
+        pro_name:"ADIDAS X Speedflow.2 FG"
         } 
        ]
 },
 ]
+export default order;

@@ -9,10 +9,10 @@
         <div class="col-12" style="border: 1px solid white; height: 20%; margin-bottom: 3%; ">
 
             <div style="height: 2rem; margin-left: 2%;" >
-                <h6 style="display: inline; color: aliceblue; ">รายการคำสั่งซื้อล่าสุด วันที่ {{ date }}</h6>
+                <h6 style="display: inline; color: aliceblue; ">รายการคำสั่งซื้อล่าสุด วันที่ {{ order_info[0].date_sales }}</h6>
                 
             </div>
-            <h5 style="color: yellow;  margin-left: 2%;">เลขที่คำสั่งซื้อ: {{ id }}</h5>
+            <h5 style="color: yellow;  margin-left: 2%;">เลขที่คำสั่งซื้อ: {{ order_info[0].order_number }}</h5>
             <img src="https://cdn.discordapp.com/attachments/954014737979564052/1080813386696249424/image.png"
                 style="margin-left: 25%; width: 50%; margin-bottom: 5%;" alt="">
 
@@ -30,27 +30,27 @@
                     <div class="col-10">
                         <div class="row py-1">
                             <h5 style="display: inline;">จัดส่งคินค้าวันที่ <span>
-                                    <h5 style="display: inline;">{{ date_sent }}</h5>
+                                    <h5 style="display: inline;">{{ order_info[0].date_delively }}</h5>
                                 </span></h5>
                         </div>
                         <div class="row py-1">
                             <h5 style="display: inline;">วันที่ทำรายการ <span>
-                                    <h5 style="display: inline;">{{ date }}</h5>
+                                    <h5 style="display: inline;">{{ order_info[0].date_sales }}</h5>
                                 </span></h5>
                         </div>
                         <div class="row py-1">
                             <h5 style="display: inline;">วิธีการชำระเงิน <span>
-                                    <h5 style="display: inline;">{{ pay[0] }}</h5>
+                                    <h5 style="display: inline;">{{ order_info[0].paymeent }}</h5>
                                 </span></h5>
                         </div>
                         <div class="row py-1">
                             <h5 style="display: inline;">วิธีการจัดส่ง <span>
-                                    <h5 style="display: inline;">{{ delivery[0] }}</h5>
+                                    <h5 style="display: inline;">{{order_info[0].delivery }}</h5>
                                 </span></h5>
                         </div>
                         <div class="row py-1">
                             <h5 style="display: inline;">สถานะการชำระเงิน <span>
-                                    <h5 style="display: inline;">{{ payment[0] }}</h5>
+                                    <h5 style="display: inline;">{{ order_info[0].pay_success }}</h5>
                                 </span></h5>
                         </div>
 
@@ -66,12 +66,12 @@
                     <div class="col-10">
                         <div class="row py-1">
                             <h5 style="display: inline;">ชื่อ <span>
-                                    <h5 style="display: inline;">{{ name }}</h5>
+                                    <h5 style="display: inline;">{{ order_info[0].name }}</h5>
                                 </span></h5>
                         </div>
                         <div class="row py-1">
-                            <h5 style="display: inline;">{{address}}</h5>
-                            <h5 style="display: inline;">เบอร์โทร {{ phone }}</h5>
+                            <h5 style="display: inline;">{{order_info[0].address}}</h5>
+                            <h5 style="display: inline;">เบอร์โทร {{ order_info[0].phone }}</h5>
                         </div>
 
 
@@ -103,7 +103,7 @@
                                 </tr>
                             </thead>
                             <tbody style="" class="">
-                                <tr v-for="index in 2" :key="index">
+                                <tr v-for="item in order_info[0].chart" :key="item">
                                     <th class="">
                                         <div class="card" style=" border: none; background-color: #464646;">
                                             <div class="row g-0">
@@ -112,13 +112,13 @@
                                                         class="img-fluid rounded-start" alt="...">
                                                 </div>
                                                 <div class="col">
-                                                    <div class="card-body">
-                                                        <h4 class="card-title tr_p">NIKE</h4>
-                                                        <p class="card-text">NIKE GRIPKNIT PHANTOM GX ELITE FG - BALTIC</p>
-                                                        <p class="card-text tr_p">รหัสสินค้า: 10750280</p>
-                                                        <p class="card-text tr_p">สี: BLUE, PINK, WHITE</p>
-                                                        <p class="card-text tr_p">ขนาด: 40 EUR</p>
-                                                        <p class="card-text tr_p">ราคา: 8,500 THB</p>
+                                                    <div class="card-body" >
+                                                        <h4 class="card-title tr_p"></h4>
+                                                        <p class="card-text">{{item.pro_name}}</p>
+                                                        <p class="card-text tr_p">{{item.product_id}}</p>
+                                                        <p class="card-text tr_p">{{item.color}}</p>
+                                                        <p class="card-text tr_p">{{item.size}}</p>
+                                                        <p class="card-text tr_p">{{item.price}}</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -140,7 +140,7 @@
                                 <h3 class="text-strat">ยอดรวม:</h3>
                             </div>
                             <div class="col-6">
-                                <h3 class="text-end">6500.00 THB</h3>
+                                <h3 class="text-end">{{ total }} THB</h3>
                             </div>
                         </div>
                         <div class="row py-1 mb-3">
@@ -148,7 +148,7 @@
                                 <h3 class="text-strat">ค่าจัดส่ง:</h3>
                             </div>
                             <div class="col-6">
-                                <h3 class="text-end">80.00 THB</h3>
+                                <h3 class="text-end">{{order_info[0].total_delivery}} THB</h3>
                             </div>
                         </div>
                         <hr>
@@ -181,17 +181,20 @@ export default {
     data() {
         return {
             new_address: false,
-            id: 264445,
-            date: "26-02-2023",
-            date_sent: "28-02-2023",
-            name:"Wichai Komm",
-            address:"เลขที่497/2 อาคาร นาคบำรุงศรี12 ลาดกระบัง เขตลาดกระบัง กรุงเทพมหานคร 10520",
-            phone:"0956466558",
-            pay:["พร้อมเพย์","ชำระผ่านธนาคาร","เก็บเงินปลาบทาง"],
-            payment:["จ่ายเงินสำเร็จ","จ่ายเงินไม่สำเร็จ"],
-            delivery:["จัดส่งสินค้าแบบปกติ - ( 2-4 วันทำการ )","จัดส่งด่วน - ( 1-2 วันทำการ)"]
+            order_info:''
+        }
+    },
+    created(){
+        this.order_info = JSON.parse(localStorage.getItem("order_key"));
+    },
+    computed:{
+        total(){
+            return this.order_info.reduce((total,curr_product) =>{
+                return total+(curr_product.price)
+            },0)
         }
     }
+    
 }
 </script>
 

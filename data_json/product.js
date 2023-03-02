@@ -9,7 +9,7 @@ const  data =
             size:"40",
             color:"Black",
             image:"@/src/assets/image_Product/1.jpg",
-            amount:2
+            amount:2,
         },
         {
             product_id:20000001,

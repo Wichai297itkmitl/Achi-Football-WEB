@@ -42,11 +42,11 @@
                     <div class="col-12" style="border: 1px solid white; height: 20%;">
 
                         <div style="height: 2rem;">
-                            <h6 style="display: inline;">รายการคำสั่งซื้อล่าสุด วันที่ {{ date }}</h6>
+                            <h6 style="display: inline;">รายการคำสั่งซื้อล่าสุด วันที่ {{ order_info[0].date_sales }}</h6>
                             <button class="btn btn-danger btn"
                                 style="display: inline; margin-left: 85%; margin-top: -2%; width: 100px; margin-bottom: 0%;">ดูคำสั่งซื้อ</button>
                         </div>
-                        <h5 style="color: yellow;">เลขที่คำสั่งซื้อ: {{ id }}</h5>
+                        <h5 style="color: yellow;">เลขที่คำสั่งซื้อ: {{ order_info[0].order_number }}</h5>
                         <img src="https://cdn.discordapp.com/attachments/954014737979564052/1080804648321040444/image.png"
                             style="margin-left: 25%; width: 50%; margin-bottom: 5%;" alt="">
 
@@ -67,11 +67,11 @@
                                 </thead>
                                 <tbody style="background-color: #222222; color: aliceblue;">
                                     <tr class="size_tr">
-                                        <td>{{ id }}</td>
-                                        <td>{{ date }}</td>
-                                        <td>1820 THB</td>
-                                        <td>ชำระเงินสำเร็จ</td>
-                                        <td>FAS5654543151</td>
+                                        <td>{{ order_info[0].order_number }}</td>
+                                        <td>{{ order_info[0].date_sales }}</td>
+                                        <td>{{ order_info[0].chart[0].price }} Bath</td>
+                                        <td>{{ order_info[0].pay_success }}</td>
+                                        <td>{{ order_info[0].tax_order }}</td>
                                         <td><a href="#" style="color: aliceblue;">รายละเอียด</a></td>
                                     </tr>
 
@@ -87,7 +87,7 @@
 
 
         </div>
-
+  
 
     </div>
 </template>
@@ -97,10 +97,12 @@ export default {
     data() {
         return {
             edit_active: false,
-            id: 264445,
-            date: "26-02-2023"
+            order_info:''
         }
     },
+    created(){
+        this.order_info = JSON.parse(localStorage.getItem("order_key"));
+    }
 }
 </script>
 

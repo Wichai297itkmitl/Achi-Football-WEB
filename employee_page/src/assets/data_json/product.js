@@ -1,5 +1,5 @@
 
-const  order = 
+const  data = 
     [
         {
             product_id:10000001,
@@ -10,8 +10,6 @@ const  order =
             color:"Black",
             image:"@/src/assets/image_Product/1.jpg",
             amount:2,
-            customer_id:1
-
         },
         {
             product_id:20000001,
@@ -21,8 +19,7 @@ const  order =
             size:"42",
             color:"Blue",
             image:"@/src/assets/image_Product/2.jpg",
-            amount:1,
-            customer_id:2
+            amount:1
 
         },
         {
@@ -33,8 +30,7 @@ const  order =
             size:"44",
             color:"White",
             image:"@/src/assets/image_Product/3.jpg",
-            amount:3,
-            customer_id:3
+            amount:3
 
         },
         {
@@ -45,8 +41,7 @@ const  order =
             size:"41",
             color:"Red",
             image:"@/src/assets/image_Product/4.jpg",
-            amount:2,
-            customer_id:4
+            amount:2
 
         },
         {
@@ -57,8 +52,7 @@ const  order =
             size:"40",
             color:"Green",
             image:"@/src/assets/image_Product/5.jpg",
-            amount:1,
-            customer_id:5
+            amount:1
 
         },
         {
@@ -69,8 +63,7 @@ const  order =
             size:"43",
             color:"White",
             image:"@/src/assets/image_Product/6.jpg",
-            amount:2,
-            customer_id:6
+            amount:2
 
         },
         {
@@ -81,8 +74,7 @@ const  order =
             size:"40",
             color:"White",
             image:"@/src/assets/image_Product/7.jpg",
-            amount:3,
-            customer_id:7
+            amount:3
 
         },
         {
@@ -93,8 +85,7 @@ const  order =
             size:"40",
             color:"Gold",
             image:"@/src/assets/image_Product/8.jpg",
-            amount:2,
-            customer_id:8
+            amount:2
 
         },
         {
@@ -105,8 +96,7 @@ const  order =
             size:"44",
             color:"White",
             image:"@/src/assets/image_Product/9.jpg",
-            amount:1,
-            customer_id:9
+            amount:1
 
         },
         {
@@ -117,8 +107,7 @@ const  order =
             size:"42",
             color:"Black",
             image:"@/src/assets/image_Product/10.jpg",
-            amount:2,
-            customer_id:10
+            amount:2
 
         },
         {
@@ -129,8 +118,7 @@ const  order =
             size:"41",
             color:"Black",
             image:"@/src/assets/image_Product/11.jpg",
-            amount:1,
-            customer_id:11
+            amount:1
 
         },
         {
@@ -141,8 +129,7 @@ const  order =
             size:"41",
             color:"Black",
             image:"@/src/assets/image_Product/12.jpg",
-            amount:1,
-            customer_id:12
+            amount:1
 
         },
         {
@@ -153,8 +140,7 @@ const  order =
             size:"43",
             color:"Black",
             image:"@/src/assets/image_Product/13.jpg",
-            amount:2,
-            customer_id:13
+            amount:2
 
         },
         {
@@ -165,8 +151,7 @@ const  order =
             size:"41",
             color:"White",
             image:"@/src/assets/image_Product/14.jpg",
-            amount:3,
-            customer_id:14
+            amount:3
 
         },
         {
@@ -177,8 +162,7 @@ const  order =
             size:"46",
             color:"Light Blue",
             image:"@/src/assets/image_Product/15.jpg",
-            amount:2,
-            customer_id:15
+            amount:2
         }
         
     ]

@@ -16,16 +16,14 @@ const order =[{
         amount:2,
         size:40,
         color:"Black",
-        chart_id:1,
-        price:9400
+        chart_id:1
         },
         {
         product_id:20000001,
         amount:1,
         size:42,
         color:"Blue",
-        chart_id:1,
-        price:4900
+        chart_id:1
         } 
        ]
 },

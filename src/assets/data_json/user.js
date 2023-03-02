@@ -1,4 +1,4 @@
-const user = JSON.parse(`[
+const user = [
     {
         user_id:698235410,
         full_name:"Wichai Kommongkhun",
@@ -8,4 +8,4 @@ const user = JSON.parse(`[
         username:"Wichai27",
         password:"big123456"
     }
-]`);
+]
