@@ -26,12 +26,12 @@
                                                 class="img-fluid rounded-start" alt="...">
                                         </div>
                                         <div class="col">
-                                            <div class="card-body VueBg " style="padding-top: 0px !important;">
-                                                <h4 class="card-title">NIKE</h4>
-                                                <p class="card-text d-r">NIKE GRIPKNIT PHANTOM GX ELITE FG - BALTIC</p>
-                                                <p class="card-text d-r">รหัสสินค้า: 10750280</p>
-                                                <p class="card-text d-r">สี: BLUE, PINK, WHITE</p>
-                                                <p class="card-text d-r">ขนาด: 5.5 US | 5 UK | 38 EU | 24 CM</p>
+                                            <div class="card-body VueBg " style="padding-top: 0px !important;" v-for="item in chart_info" :key="item">
+                                                <h4 class="card-title">{{item.product[0].brand}}</h4>
+                                                <p class="card-text d-r">{{item.product[0].pro_name}}</p>
+                                                <p class="card-text d-r">รหัสสินค้า: {{item.product[0].product_id}}</p>
+                                                <p class="card-text d-r">สี: {{item.product[0].color}}</p>
+                                                <p class="card-text d-r">ขนาด: {{item.product[0].size}}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -43,8 +43,8 @@
                                         <div class="btn-group" role="group" aria-label="Basic outlined example">
                                             <button type="button" class="btn btn-outline-secondary">-</button>
                                             <input type="text" class="form-control text-center ele-num"
-                                                style="color: aliceblue;" value="1">
-                                            <button type="button" class="btn btn-outline-secondary">+</button>
+                                                style="color: aliceblue;" value="1" >
+                                            <button type="button" class="btn btn-outline-secondary" >+</button>
                                         </div>
                                         <a href="#" class="mx-3"><img src="@/assets/icons/trash-can-64.png" alt=""
                                                 width="35" class="mx-2"></a>
@@ -115,14 +115,18 @@
         </div>
 
     </div>
+    
 </template>
 
 <script>
 export default {
     data() {
         return {
-
+            chart_info: ''
         }
+    },
+    created(){
+        this.chart_info = JSON.parse(localStorage.getItem("chart_key"));
     }
 }
 </script>
