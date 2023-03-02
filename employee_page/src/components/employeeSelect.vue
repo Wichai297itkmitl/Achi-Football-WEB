@@ -12,7 +12,7 @@
           <img src="logo.png" alt="">
         </div>
         <div class="d-flex py-2">
-          <a href="/employeeSelect" style="color:aliceblue; text-deecoration: none;">
+          <a href="/employeeSelect" style="color:aliceblue; text-decoration: none;">
             <h3>รายการคำสั่งซื้อ</h3>
           </a>
         </div>
@@ -28,7 +28,7 @@
           </a>
         </div>
         <div class="d-flex py-2">
-          <a href="#" style="color:aliceblue;">
+          <a href="#" @click="logout()" style="color: aliceblue;">
             <h3>ออกจากระบบ</h3>
           </a>
           <img src="logo.png" alt="">
@@ -38,7 +38,7 @@
       <div class="col-8 mx-3">
         <div class="row" style="color:aliceblue;">
           <div class="col">
-            <h3>รหัสพนักงาน 12345</h3>
+            <h3>รหัสพนักงาน {{ employee_ID }}</h3>
             <h5>รายการคำสั่งซื้อ</h5>
           </div>
         </div>
@@ -59,13 +59,6 @@
                 ที่ยังไม่ได้รับเลขติดตามพัสดุ
               </label>
             </div>
-            <!-- 
-            <div class="form-check mx-2">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-              <label class="form-check-label" for="flexCheckDefault">
-                ที่ได้รับเลขติดตามพัสดุแล้ว
-              </label>
-            </div> -->
           </div>
           <div class="col-4">
             <div class="form-check">
@@ -153,7 +146,14 @@
 export default {
   data() {
     return {
-
+      employee_ID: localStorage.getItem('employee_id'),
+    }
+  },
+  methods: {
+    logout() {
+      localStorage.removeItem('Is_login');
+      localStorage.removeItem('employee_id');
+      window.location.href = '/login';
     }
   }
 }

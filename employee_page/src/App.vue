@@ -20,8 +20,7 @@
 <script>
 import Admin from './data_json/admin.js';
 import Product from './data_json/product.js';
-import Login from './components/Login-employee_page.vue';
-
+import Login from './components/Employee-Login.vue';
 // function read(){
 //   let re = localStorage.getItem("product_key");
 //   console.log(re);
@@ -30,24 +29,31 @@ import Login from './components/Login-employee_page.vue';
 export default {
   name: 'App',
   components: {
-    Login,
     Product,
-    Admin
+    Admin,
+    Login
   },
   data(){
     return{
-      login: true,
+      login: '',
       prd: Product,
       adm: Admin,
-      product_info:JSON.parse(localStorage.getItem("product_key")), 
-      admin_info:JSON.parse(localStorage.getItem("admin_key"))
+      // product_info: JSON.parse(localStorage.getItem("product_key")), 
+      // admin_info: JSON.parse(localStorage.getItem("admin_key"))
     }
   },
   created() {
     console.log();
       localStorage.setItem("product_key", JSON.stringify(this.prd));
       localStorage.setItem("admin_key" ,JSON.stringify(this.adm));
-      console.log();
+      
+      try{
+        this.login = (localStorage.getItem("Is_login") === "true");
+        console.log("Login-"+" "+this.login);
+      }catch(e){
+        localStorage.setItem("Is_login", false);
+        this.login = this.login = (localStorage.getItem("Is_login") === "true");
+      }
   },
 
   methods:{

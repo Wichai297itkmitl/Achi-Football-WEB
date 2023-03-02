@@ -30,7 +30,7 @@
                     </a>
                 </div>
                 <div class="d-flex py-2">
-                    <a href="#" style="color:aliceblue;">
+                    <a href="#" @click="logout()" style="color:aliceblue;">
                         <h3>ออกจากระบบ</h3>
                     </a>
                     <img src="logo.png" alt="">
@@ -62,29 +62,29 @@
                             <br>
                             <div class="col-6 py-4">
                                 <h5>ชื่อ-นามสกุล</h5>
-                                <h6>Wichai Kommongkhun</h6>
+                                <h6>{{ full_name }}</h6>
                             </div>
                             <div class="col-6 py-4">
                                 <h5>วัน/เดือน/ปีเกิด</h5>
-                                <h6>11/11/2002</h6>
+                                <h6>{{ date }}</h6>
                             </div>
                         </div>
                         <div class="row" style="background-color: #6B6B6B;">
                             <br>
                             <div class="col-6 py-4">
                                 <h5>อีเมล์</h5>
-                                <h6>64070230kmitl.ac.th</h6>
+                                <h6>{{ email }}</h6>
                             </div>
                             <div class="col-6 py-4">
                                 <h5>เบอร์มือถือ</h5>
-                                <h6>095-634-0638</h6>
+                                <h6>{{ phone }}</h6>
                             </div>
                         </div>
                         <div class="row" style="background-color: #6B6B6B;">
                             <br>
                             <div class="col-6 py-4">
                                 <h5>รหัสพนักงาน</h5>
-                                <h6>wichai_admin</h6>
+                                <h6>{{ employee_ID }}</h6>
                             </div>
                             <div class="col-6 py-4">
                                 <h5>รหัสผ่าน</h5>
@@ -106,11 +106,11 @@
                     <div class="col-5">
                         <h4>ชื่อ-นามสกุล</h4>
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control col-5" id="basic-url" aria-describedby="basic-addon3"
-                                required />
+                            <input type="text" class="form-control col-5" v-model="e_full_name"
+                            required />
                         </div>
                     </div>
-                    <div class="col-3 mx-3">
+                    <!-- <div class="col-3 mx-3">
                         <h4>เพศ</h4>
                         <select class="form-select form-select-lg mb-2" aria-label=".form-select-lg example">
                             <option selected>-------</option>
@@ -119,14 +119,14 @@
                             <option value="3">อื่นๆ</option>
                             <option value="3">ไม่ระบุ</option>
                         </select>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="row mx-4">
                     <div class="col-5">
                         <h4>วัน/เดือน/ปีเกิด</h4>
                         <div class="input-group mb-3">
-                            <input type="date" class="form-control col-5" id="basic-url" aria-describedby="basic-addon3"
-                                required />
+                            <input type="date" class="form-control col-5"
+                             v-model="e_date"  required />
                         </div>
                     </div>
                 </div>
@@ -135,8 +135,8 @@
                     <div class="col-6">
                         <h4>email:</h4>
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control col-5" id="basic-url" aria-describedby="basic-addon3"
-                                required />
+                            <input type="text" class="form-control col-5"  v-model="e_email"
+                            :placeholder="email"   required />
                         </div>
                     </div>
                 </div>
@@ -145,8 +145,7 @@
                     <div class="col-6">
                         <h4>phone:</h4>
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control col-5" id="basic-url" aria-describedby="basic-addon3"
-                                required />
+                            <input type="text" class="form-control col-5" :placeholder="phone"  v-model="e_phone"  required />
                         </div>
                     </div>
                 </div>
@@ -155,8 +154,8 @@
                     <div class="col-6">
                         <h4>password:</h4>
                         <div class="input-group mb-3">
-                            <input type="password" class="form-control col-5" id="basic-url" aria-describedby="basic-addon3"
-                                required />
+                            <input type="password" class="form-control col-5" 
+                            v-model="e_password"  placeholder="***********"  required />
                         </div>
                     </div>
                 </div>
@@ -165,7 +164,7 @@
                     <div class="col-6">
                         <h4>Confirm Password:</h4>
                         <div class="input-group mb-3">
-                            <input type="password" class="form-control col-5" id="basic-url" aria-describedby="basic-addon3"
+                            <input type="password" class="form-control col-5" v-model="e_password_con"
                                 required />
                         </div>
                     </div>
@@ -183,8 +182,8 @@
 
                 <div class="row mx-4">
                     <div class="col-6 d-flex">
-                        <button type="submit" class="btn btn-success btn-lg">บันทึก</button>
-                        <button type="submit" class="btn btn-danger btn-lg mx-3"
+                        <button type="button" class="btn btn-success btn-lg" @click="update()">บันทึก</button>
+                        <button type="button" class="btn btn-danger btn-lg mx-3"
                             @click="edit_active = false;">ยกเลิก</button>
                     </div>
                 </div>
@@ -200,12 +199,58 @@
 </template>
 
 <script>
+import info from '../data_json/admin.js';
 export default {
+
     data() {
         return {
             edit_active: false,
+            employee_ID: localStorage.getItem('employee_id'),
+            full_name: '',
+            date:'',
+            email:'',
+            phone:'',
+            password:'',
+            e_full_name: '',
+            e_date: '',
+            e_email:'',
+            e_phone:'',
+            e_password:'',
+            e_password_con: ''
         }
     },
+    created(){
+        info.forEach(acc => {
+            if (acc.em_id == Number(this.employee_ID)){
+                this.full_name = acc.full_name;
+                this.date = acc.date;
+                this.e_date = acc.date;
+                this.email = acc.email;
+                this.phone = acc.phone;
+                this.password = acc.password;
+                return null;
+            }
+        });
+    },
+    methods:{
+        update(){
+            if ((this.e_password_con.length > 0) && this.e_password_con === this.password){
+                if (!this.full_name){console.log("");
+                }else{this.full_name = this.e_full_name;}
+                if (!this.e_date){console.log("");}else{this.date = this.e_date;}
+                if(!this.e_email){console.log("");}else{this.email = this.e_email;}
+                if (!this.e_phone){console.log("");}else{this.phone = this.e_phone;}
+                if (!this.e_password){console.log("");}else{this.password = this.e_password;}
+            }
+            this.edit_active = false;
+        }
+        ,
+        logout(){
+            localStorage.removeItem('Is_login');
+            localStorage.removeItem('employee_id');
+            window.location.href = '/login';
+        }
+    }
 }
 </script>
 

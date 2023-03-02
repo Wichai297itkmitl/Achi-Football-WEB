@@ -11,6 +11,7 @@ import emChangePro from "@/components/employeeChangePro.vue";
 import emAddPro from "@/components/employeeAddpro.vue";
 import test from "@/components/Test-medel.vue";
 import Enployee_Info from "@/components/Employee-information.vue";
+import login from "@/components/Employee-Login.vue";
 // saasdas
 const routes = [
     {
@@ -52,7 +53,12 @@ const routes = [
         path:"/emInfo",
         name: "Enployee_Info",
         component: Enployee_Info
-    }
+    },
+    {
+        path:"/login",
+        name: "login",
+        component: login
+    },
 
 
 ]

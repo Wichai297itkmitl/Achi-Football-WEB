@@ -3,33 +3,33 @@
     <title>AchiFootBall</title>
   </head>
 
-  <div class="container py-3" style="color: aliceblue;">
+  <div class="container py-3" style="color: aliceblue">
     <div class="row">
       <div class="col-3 border-end">
         <div class="d-flex py-2">
-          <a href="/emInfo" style="color:aliceblue; text-decoration: none;">
+          <a href="/emInfo" style="color: aliceblue; text-decoration: none">
             <h3>บัญชีของฉัน</h3>
           </a>
-          <img src="logo.png" alt="">
+          <img src="logo.png" alt="" />
         </div>
         <div class="d-flex py-2">
-          <a href="/employeeSelect" style="color:aliceblue; text-decoration: none;">
+          <a href="/employeeSelect" style="color: aliceblue; text-decoration: none">
             <h3>รายการคำสั่งซื้อ</h3>
           </a>
         </div>
         <div class="d-flex py-2">
-          <a href="/emCon" style="color:aliceblue; text-decoration: none;">
+          <a href="/emCon" style="color: aliceblue; text-decoration: none">
             <h3>ส่งเลขติดตามพัศดุ</h3>
           </a>
         </div>
 
         <div class="d-flex py-2">
-          <a href="/emSelecttrue" style="color:aliceblue; text-decoration: none;">
+          <a href="/emSelecttrue" style="color: aliceblue; text-decoration: none">
             <h3>จัดการสินค้าในคลัง</h3>
           </a>
         </div>
         <div class="d-flex py-2">
-          <a href="#" style="color:aliceblue;">
+          <a href="#" @click="logout()" style="color: aliceblue;">
             <h3>ออกจากระบบ</h3>
           </a>
           <img src="logo.png" alt="">
@@ -37,28 +37,28 @@
       </div>
 
       <div class="col-8 mx-3">
-        <div class="row" style="color:aliceblue;">
+        <div class="row" style="color: aliceblue">
           <div class="col">
-            <h3>รหัสพนักงาน 12345</h3>
+            <h3>รหัสพนักงาน {{ employee_ID }}</h3>
             <h5>ส่งเลขติดตามพัศดุ</h5>
           </div>
         </div>
-        <div class="row py-4" style="color: aliceblue;">
+        <div class="row py-4" style="color: aliceblue">
           <div class="col-12 d-flex">
             <label for="">ค้นหาคำสั่งซื้อ :</label>
             <div class="col-2 mx-3 input-group-sm">
-              <input type="text" placeholder="ระบุเลขที่คำสั่งซื้อ" class="form-control">
+              <input type="text" placeholder="ระบุเลขที่คำสั่งซื้อ" class="form-control" />
             </div>
             <label for="">แสดงคำสั่งซื้อวันที่ :</label>
             <div class="col-2 mx-3 input-group-sm">
-              <input type="date" placeholder="ระบุเลขที่คำสั่งซื้อ" class="form-control">
+              <input type="date" placeholder="ระบุเลขที่คำสั่งซื้อ" class="form-control" />
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col">
             <table class="table">
-              <thead style="background-color: #505050; color: aliceblue;">
+              <thead style="background-color: #505050; color: aliceblue">
                 <tr>
                   <th>เลขที่คำสั่งซื้อ</th>
                   <th>วันที่สั่งซื้อ</th>
@@ -68,22 +68,34 @@
                   <th></th>
                 </tr>
               </thead>
-              <tbody style="background-color: #222222; color: aliceblue;">
+              <tbody style="background-color: #222222; color: aliceblue">
                 <tr class="size_tr">
                   <td>1564486</td>
                   <td>26-02-2023</td>
                   <td>1820 THB</td>
                   <td>ชำระเงินสำเร็จ</td>
-                  <td><input type="text" class="form-control input-group-sm form-cc"></td>
-                  <td><button type="button" class=" btn btn-sm btn-warning">ยืนยัน</button></td>
+                  <td>
+                    <input type="text" class="form-control input-group-sm form-cc" />
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-sm btn-warning">
+                      ยืนยัน
+                    </button>
+                  </td>
                 </tr>
                 <tr class="size_tr">
                   <td>1564486</td>
                   <td>26-02-2023</td>
                   <td>1820 THB</td>
                   <td>ชำระเงินสำเร็จ</td>
-                  <td><input type="text" class="form-control input-group-sm form-cc"></td>
-                  <td><button type="button" class=" btn btn-sm btn-warning">ยืนยัน</button></td>
+                  <td>
+                    <input type="text" class="form-control input-group-sm form-cc" />
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-sm btn-warning">
+                      ยืนยัน
+                    </button>
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -91,18 +103,25 @@
         </div>
         <div class="row py-2">
           <div class="col">
-            <button type="button" class="btn btn-success">พิมพ์ข้อมูลการสั่งซื้อ</button>
-            <br>
+            <button type="button" class="btn btn-success">
+              พิมพ์ข้อมูลการสั่งซื้อ
+            </button>
+            <br />
           </div>
         </div>
         <div class="row py-3">
           <div class="col">
             <h4>เลขติดตามพัสดุ คืออะไร?</h4>
-            <p>เลข Tracking คือ สิ่งที่ยืนยันให้กับร้านค้าหรือผู้ส่งได้ว่ามีการส่งของให้ลูกค้าหรือผู้รับแล้ว
-              ถ้าหากร้านค้าได้รับเลข Tracking นั่นหมายความว่า บริษัทขนส่งได้รับพัสดุเข้าสู่ระบบ Tracking เรียบร้อยแล้ว
-              ร้านค้าหรือผู้ส่งสามารถนำเลข Tracking มาเช็คสถานะพัสดุได้เลย หรือส่งเลข Tracking
-              ให้ลูกค้าเพื่อเป็นการยืนยันการจัดส่งพัสดุ หรือจะไว้ติดตามสถานะพัสดุ ตอนนี้ลูกค้าได้รับพัสดุแล้วหรือยัง
-              นอกจากนี้เลข Tracking ยังสามารถเรียกร้องค่าเสียหาย ในกรณีที่พัสดุเกิดสูญหายหรือได้รับความเสียหายได้อีกด้วย
+            <p>
+              เลข Tracking คือ
+              สิ่งที่ยืนยันให้กับร้านค้าหรือผู้ส่งได้ว่ามีการส่งของให้ลูกค้าหรือผู้รับแล้ว
+              ถ้าหากร้านค้าได้รับเลข Tracking นั่นหมายความว่า
+              บริษัทขนส่งได้รับพัสดุเข้าสู่ระบบ Tracking เรียบร้อยแล้ว
+              ร้านค้าหรือผู้ส่งสามารถนำเลข Tracking มาเช็คสถานะพัสดุได้เลย
+              หรือส่งเลข Tracking ให้ลูกค้าเพื่อเป็นการยืนยันการจัดส่งพัสดุ
+              หรือจะไว้ติดตามสถานะพัสดุ ตอนนี้ลูกค้าได้รับพัสดุแล้วหรือยัง
+              นอกจากนี้เลข Tracking ยังสามารถเรียกร้องค่าเสียหาย
+              ในกรณีที่พัสดุเกิดสูญหายหรือได้รับความเสียหายได้อีกด้วย
             </p>
           </div>
         </div>
@@ -114,7 +133,6 @@
         </div>
       </div>
     </div>
-
   </div>
 </template>
   
@@ -122,15 +140,22 @@
 export default {
   data() {
     return {
-
+      employee_ID: localStorage.getItem("employee_id"),
+    };
+  },
+  methods: {
+    logout() {
+      localStorage.removeItem('Is_login');
+      localStorage.removeItem('employee_id');
+      window.location.href = '/login';
     }
   }
-}
+};
 </script>
   
 <style scoped>
 .form-cc {
-  background-color: #2C2C2C !important;
+  background-color: #2c2c2c !important;
   color: aliceblue;
 }
 </style>

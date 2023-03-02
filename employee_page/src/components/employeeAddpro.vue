@@ -18,7 +18,7 @@
                     </a>
                 </div>
                 <div class="d-flex py-2">
-                    <a href="#" style="color:aliceblue;">
+                    <a href="#" @click="logout()" style="color: aliceblue;">
                         <h3>ออกจากระบบ</h3>
                     </a>
                     <img src="logo.png" alt="">
@@ -136,6 +136,11 @@ export default {
                      Size: ${this.size} \n
                      Amount: ${this.amount}`);
             window.location.reload
+        },
+        logout(){
+            localStorage.removeItem('Is_login');
+            localStorage.removeItem('employee_id');
+            window.location.href = '/login';
         }
 
     },
