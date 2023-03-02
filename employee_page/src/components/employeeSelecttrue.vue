@@ -79,7 +79,7 @@
             <div class="row" >
                     <div class="col h_max" >
                         <!-- for some think in future -->
-                        {{ admin_info }}
+                        <!-- {{ admin_info }} -->
                         <!-- <img alt="" :src="img"> -->
                     </div>
             </div>
@@ -95,8 +95,7 @@ export default {
         return {
             product_info: '',
             admin_info: '',
-            search: "",
-
+            search: ''
         }
     },
     created(){
@@ -106,10 +105,9 @@ export default {
         console.log(this.product_info.length);
     },
     watch:{
-        search(newVal, oldVal){
-            console.log(newVal, oldVal);
-        }
+        search(newVal, oldVal){ console.log(newVal, oldVal);
     }
+}
 
 }
 

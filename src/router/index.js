@@ -11,6 +11,8 @@ import Cart from "@/components/Cart-Page.vue";
 import ProductDetail from "@/components/Product-Detail.vue";
 import User_info from "@/components/User-information.vue";
 import Check_out from "@/components/Check-out.vue";
+import pro_star from "@/components/product_star.vue";
+import order_his from "@/components/order_hitory.vue";
 // saasdas
 const routes = [
     {
@@ -52,6 +54,16 @@ const routes = [
         path:"/check-out",
         name: "check-out",
         component: Check_out
+    },
+    {
+        path:"/pro_star",
+        name:"pro_star",
+        component:pro_star
+    },
+    {
+        path:"/order_his",
+        name:"order_history",
+        component:order_his
     }
 
 ]

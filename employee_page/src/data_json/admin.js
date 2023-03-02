@@ -1,4 +1,4 @@
-const em = ([
+const em =[
     {
             em_id:41570002,
             full_name:"Jack Grealish",
@@ -8,6 +8,6 @@ const em = ([
             password:"jack123456",
             admin_password:"54321"
     }
-]);
+]
 
 export default em;

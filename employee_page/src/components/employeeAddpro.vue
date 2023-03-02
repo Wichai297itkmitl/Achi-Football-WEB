@@ -96,7 +96,7 @@
 
                 <div class="row py-2">
                     <div class="col d-flex">
-                        <button type="button" class="btn btn-lg btn-success mx-2" @click="">เพิ่มสินค้า</button>
+                        <button type="button" class="btn btn-lg btn-success mx-2" @click="add_pro">เพิ่มสินค้า</button>
                         <button type="button" class="btn btn-lg btn-danger mx-2">ล้างข้อมูล</button>
                     </div>
                 </div>
@@ -128,7 +128,7 @@ export default {
     methods(){
         return{
             add_pro(){
-
+                this.p_id
             }
         }
     },
