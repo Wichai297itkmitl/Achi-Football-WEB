@@ -38,8 +38,8 @@
                 <div class="row py-4" style="color: aliceblue;">
                     <div class="col d-flex">
                         <label for="">ค้นหาสินค้า :</label>
-                        <div class="col-2 mx-3 input-group-sm">
-                            <input type="text" placeholder="ระบุข้อมูลสินค้า" class="form-control">
+                        <div class="col-2 mx-3 input-group-sm" >
+                            <input type="text" placeholder="ระบุข้อมูลสินค้า" class="form-control" v-model="search">
                         </div>
                     </div>
                 </div>
@@ -56,40 +56,36 @@
                                     <th></th>
                                 </tr>
                             </thead>
-                            <tbody class="">
-                                <tr class="size_tr">
-                                    <td >56007823</td>
-                                    <td style="max-width: 200px !important;">ADIDAS X SPEEDPORTAL MESSI .1 FG - TMSOOR/MINRUS/CBLACK</td>
-                                    <td>Addidas</td>
-                                    <td>8,500</td>
-                                    <td class="text-center">12</td>
+                            <tbody class=""  >
+                                <tr class="size_tr" v-for="item in product_info" :key="item" > 
+                                    <!-- v-if="item.product_id.includes(search)" -->
+                                    <td >{{item.product_id}}</td>
+                                    <td style="max-width: 200px !important;">{{ item.pro_name }}</td>
+                                    <td>{{item.brand}}</td>
+                                    <td>{{item.price}}</td>
+                                    <td class="text-center">{{item.amount}}</td>
                                     <td style="text-decoration: underline; color: yellow;">
                                         <a href="#" style="color: yellow;">ข้อมูลเพิ่มเติม</a>
                                     </td>
                                 </tr>
-                                <tr class="size_tr">
-                                    <td>1564486</td>
-                                    <td style="max-width: 200px !important;">nike vapor 2023 world cup</td>
-                                    <td>Nike</td>
-                                    <td>8,500</td>
-                                    <td class="text-center">13</td>
-                                    <td style="text-decoration: underline; color: yellow;" >
-                                        <a href="#" style="color: yellow;">ข้อมูลเพิ่มเติม</a>
-                                    </td>
-                                </tr>
+                                
                             </tbody>
                         </table>
                     </div>
                 </div>
 
             </div>
-            <div class="row">
-                    <div class="col h_max">
+            <div class="row" >
+                    <div class="col h_max" >
                         <!-- for some think in future -->
+                        <br> 
+                        <br>
+                       
                         <img alt="" :src="img">
                     </div>
             </div>
         </div>
+        
 
     </div>
 </template>
@@ -99,14 +95,20 @@ export default {
     data() {
         return {
             product_info: '',
-            img: "adadasdasd"
+
         }
     },
     created(){
         this.product_info = JSON.parse(localStorage.getItem("product_key"));
+    },
+    watch:{
+        search(newVal){
+            this.product_info = this.product_info.filter(person =>(person.product_id).includes(newVal)) 
+        }
     }
 
 }
+
 </script>
     
 <style>
