@@ -93,8 +93,8 @@ export default {
     data() {
         return {
             product_info: '',
-            admin_info: ''
-
+            admin_info: '',
+            search: ''
         }
     },
     created(){
@@ -103,7 +103,8 @@ export default {
     },
     watch:{
         search(newVal){
-            this.product_info = this.product_info.filter(person =>(person.product_id).includes(newVal)) 
+            this.product_info = this.product_info.filter(person =>(person.product_id).includes(newVal))
+            
         }
     }
 
