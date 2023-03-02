@@ -8,7 +8,7 @@ const  data =
             price:"9,400",
             size:"40",
             color:"Black",
-            image:"@/src/assets/image_Product/1.jpg",
+            image:"@/assets/image_Product/1.jpg",
             amount:2,
         },
         {
@@ -18,7 +18,7 @@ const  data =
             price:"4,900",
             size:"42",
             color:"Blue",
-            image:"@/src/assets/image_Product/2.jpg",
+            image:"../assets/image_Product/2.jpg",
             amount:1
 
         },
@@ -29,7 +29,7 @@ const  data =
             price:"4,900",
             size:"44",
             color:"White",
-            image:"@/src/assets/image_Product/3.jpg",
+            image:"../assets/image_Product/3.jpg",
             amount:3
 
         },
@@ -40,7 +40,7 @@ const  data =
             price:"3,200",
             size:"41",
             color:"Red",
-            image:"@/src/assets/image_Product/4.jpg",
+            image:"../assets/image_Product/4.jpg",
             amount:2
 
         },
@@ -51,7 +51,7 @@ const  data =
             price:"3,200",
             size:"40",
             color:"Green",
-            image:"@/src/assets/image_Product/5.jpg",
+            image:"../assets/image_Product/5.jpg",
             amount:1
 
         },
@@ -62,7 +62,7 @@ const  data =
             price:"3,200",
             size:"43",
             color:"White",
-            image:"@/src/assets/image_Product/6.jpg",
+            image:"../assets/image_Product/6.jpg",
             amount:2
 
         },
@@ -73,7 +73,7 @@ const  data =
             price:"3,200",
             size:"40",
             color:"White",
-            image:"@/src/assets/image_Product/7.jpg",
+            image:"../assets/image_Product/7.jpg",
             amount:3
 
         },
@@ -84,7 +84,7 @@ const  data =
             price:"3,300",
             size:"40",
             color:"Gold",
-            image:"@/src/assets/image_Product/8.jpg",
+            image:"../assets/image_Product/8.jpg",
             amount:2
 
         },
@@ -95,7 +95,7 @@ const  data =
             price:"2,700",
             size:"44",
             color:"White",
-            image:"@/src/assets/image_Product/9.jpg",
+            image:"../assets/image_Product/9.jpg",
             amount:1
 
         },
@@ -106,7 +106,7 @@ const  data =
             price:"3,600",
             size:"42",
             color:"Black",
-            image:"@/src/assets/image_Product/10.jpg",
+            image:"../assets/image_Product/10.jpg",
             amount:2
 
         },
@@ -117,7 +117,7 @@ const  data =
             price:"3,200",
             size:"41",
             color:"Black",
-            image:"@/src/assets/image_Product/11.jpg",
+            image:"../assets/image_Product/11.jpg",
             amount:1
 
         },
@@ -128,7 +128,7 @@ const  data =
             price:"3,300",
             size:"41",
             color:"Black",
-            image:"@/src/assets/image_Product/12.jpg",
+            image:"../assets/image_Product/12.jpg",
             amount:1
 
         },
@@ -139,7 +139,7 @@ const  data =
             price:"3,300",
             size:"43",
             color:"Black",
-            image:"@/src/assets/image_Product/13.jpg",
+            image:"../assets/image_Product/13.jpg",
             amount:2
 
         },
@@ -150,7 +150,7 @@ const  data =
             price:"3,300",
             size:"41",
             color:"White",
-            image:"@/src/assets/image_Product/14.jpg",
+            image:"../assets/image_Product/14.jpg",
             amount:3
 
         },
@@ -161,10 +161,11 @@ const  data =
             price:"3,300",
             size:"46",
             color:"Light Blue",
-            image:"@/src/assets/image_Product/15.jpg",
+            image:"../assets/image_Product/15.jpg",
             amount:2
         }
         
     ]
    
+    export default data;
  

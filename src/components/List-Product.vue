@@ -94,18 +94,18 @@
 
             <!-- List_product -->
             <div class="row py-2">
-                <div class="col-3 mx-3 py-3">
+                <div class="col-3 mx-3 py-3" v-for="item in product" :key="item">
                   <div class="card bg-dark " style="width: 18rem; height: ; ">
                     <img
-                      src="https://lzd-img-global.slatic.net/g/p/9a761cd5dc6b4456fd80bed73d8921ea.jpg_720x720q80.jpg_.webp"
+                      :src="item.imgage"
                       class=""
                       alt="..."
                       width="100%" height="280px"
                     />
                     <div class="card-body text-start" style="color:#fff; width: 18rem; height: 12rem;">
-                      <h5 class="card-title">ADIDAS</h5>
-                      <p class="card-text"> ADIDAS X SPEEDPORTAL MESSI .1 FG - TMSOOR/MINRUS/CBLACK</p>
-                      <h3 >8,500.00 THB</h3>
+                      <h5 class="card-title">{{ item.brand }}</h5>
+                      <p class="card-text">{{ item.pro_name }}</p>
+                      <h3 >{{ item.price }}.00 THB</h3>
                       <div class="star text-end">
                         <span>
                           <i class="bi bi-star" style="font-size:24px;"></i>
@@ -116,181 +116,6 @@
                   </div>
                 </div>
 
-                <div class="col-3 mx-3 py-3">
-                  <div class="card bg-dark " style="width: 18rem; height: ; ">
-                    <img
-                      src="https://lzd-img-global.slatic.net/g/p/9a761cd5dc6b4456fd80bed73d8921ea.jpg_720x720q80.jpg_.webp"
-                      class=""
-                      alt="..."
-                      width="100%" height="280px"
-                    />
-                    <div class="card-body text-start" style="color:#fff; width: 18rem; height: 12rem;">
-                      <h5 class="card-title">ADIDAS</h5>
-                      <p class="card-text"> ADIDAS X SPEEDPORTAL MESSI .1 FG - TMSOOR/MINRUS/CBLACK</p>
-                      <h3 >8,500.00 THB</h3>
-                      <div class="star text-end">
-                        <span>
-                          <i class="bi bi-star" style="font-size:24px;"></i>
-                          <!-- text-warning -->
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-3 mx-3 py-3">
-                  <div class="card bg-dark " style="width: 18rem; height: ; ">
-                    <img
-                      src="https://lzd-img-global.slatic.net/g/p/9a761cd5dc6b4456fd80bed73d8921ea.jpg_720x720q80.jpg_.webp"
-                      class=""
-                      alt="..."
-                      width="100%" height="280px"
-                    />
-                    <div class="card-body text-start" style="color:#fff; width: 18rem; height: 12rem;">
-                      <h5 class="card-title">ADIDAS</h5>
-                      <p class="card-text"> ADIDAS X SPEEDPORTAL MESSI .1 FG - TMSOOR/MINRUS/CBLACK</p>
-                      <h3 >8,500.00 THB</h3>
-                      <div class="star text-end">
-                        <span>
-                          <i class="bi bi-star" style="font-size:24px;"></i>
-                          <!-- text-warning -->
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-3 mx-3 py-3">
-                  <div class="card bg-dark " style="width: 18rem; height: ; ">
-                    <img
-                      src="https://lzd-img-global.slatic.net/g/p/9a761cd5dc6b4456fd80bed73d8921ea.jpg_720x720q80.jpg_.webp"
-                      class=""
-                      alt="..."
-                      width="100%" height="280px"
-                    />
-                    <div class="card-body text-start" style="color:#fff; width: 18rem; height: 12rem;">
-                      <h5 class="card-title">ADIDAS</h5>
-                      <p class="card-text"> ADIDAS X SPEEDPORTAL MESSI .1 FG - TMSOOR/MINRUS/CBLACK</p>
-                      <h3 >8,500.00 THB</h3>
-                      <div class="star text-end">
-                        <span>
-                          <i class="bi bi-star" style="font-size:24px;"></i>
-                          <!-- text-warning -->
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-3 mx-3 py-3">
-                  <div class="card bg-dark " style="width: 18rem; height: ; ">
-                    <img
-                      src="https://lzd-img-global.slatic.net/g/p/9a761cd5dc6b4456fd80bed73d8921ea.jpg_720x720q80.jpg_.webp"
-                      class=""
-                      alt="..."
-                      width="100%" height="280px"
-                    />
-                    <div class="card-body text-start" style="color:#fff; width: 18rem; height: 12rem;">
-                      <h5 class="card-title">ADIDAS</h5>
-                      <p class="card-text"> ADIDAS X SPEEDPORTAL MESSI .1 FG - TMSOOR/MINRUS/CBLACK</p>
-                      <h3 >8,500.00 THB</h3>
-                      <div class="star text-end">
-                        <span>
-                          <i class="bi bi-star" style="font-size:24px;"></i>
-                          <!-- text-warning -->
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-3 mx-3 py-3">
-                  <div class="card bg-dark " style="width: 18rem; height: ; ">
-                    <img
-                      src="https://lzd-img-global.slatic.net/g/p/9a761cd5dc6b4456fd80bed73d8921ea.jpg_720x720q80.jpg_.webp"
-                      class=""
-                      alt="..."
-                      width="100%" height="280px"
-                    />
-                    <div class="card-body text-start" style="color:#fff; width: 18rem; height: 12rem;">
-                      <h5 class="card-title">ADIDAS</h5>
-                      <p class="card-text"> ADIDAS X SPEEDPORTAL MESSI .1 FG - TMSOOR/MINRUS/CBLACK</p>
-                      <h3 >8,500.00 THB</h3>
-                      <div class="star text-end">
-                        <span>
-                          <i class="bi bi-star" style="font-size:24px;"></i>
-                          <!-- text-warning -->
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-3 mx-3 py-3">
-                  <div class="card bg-dark " style="width: 18rem; height: ; ">
-                    <img
-                      src="https://lzd-img-global.slatic.net/g/p/9a761cd5dc6b4456fd80bed73d8921ea.jpg_720x720q80.jpg_.webp"
-                      class=""
-                      alt="..."
-                      width="100%" height="280px"
-                    />
-                    <div class="card-body text-start" style="color:#fff; width: 18rem; height: 12rem;">
-                      <h5 class="card-title">ADIDAS</h5>
-                      <p class="card-text"> ADIDAS X SPEEDPORTAL MESSI .1 FG - TMSOOR/MINRUS/CBLACK</p>
-                      <h3 >8,500.00 THB</h3>
-                      <div class="star text-end">
-                        <span>
-                          <i class="bi bi-star" style="font-size:24px;"></i>
-                          <!-- text-warning -->
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-3 mx-3 py-3">
-                  <div class="card bg-dark " style="width: 18rem; height: ; ">
-                    <img
-                      src="https://lzd-img-global.slatic.net/g/p/9a761cd5dc6b4456fd80bed73d8921ea.jpg_720x720q80.jpg_.webp"
-                      class=""
-                      alt="..."
-                      width="100%" height="280px"
-                    />
-                    <div class="card-body text-start" style="color:#fff; width: 18rem; height: 12rem;">
-                      <h5 class="card-title">ADIDAS</h5>
-                      <p class="card-text"> ADIDAS X SPEEDPORTAL MESSI .1 FG - TMSOOR/MINRUS/CBLACK</p>
-                      <h3 >8,500.00 THB</h3>
-                      <div class="star text-end">
-                        <span>
-                          <i class="bi bi-star" style="font-size:24px;"></i>
-                          <!-- text-warning -->
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-3 mx-3 py-3">
-                  <div class="card bg-dark " style="width: 18rem; height: ; ">
-                    <img
-                      src="https://lzd-img-global.slatic.net/g/p/9a761cd5dc6b4456fd80bed73d8921ea.jpg_720x720q80.jpg_.webp"
-                      class=""
-                      alt="..."
-                      width="100%" height="280px"
-                    />
-                    <div class="card-body text-start" style="color:#fff; width: 18rem; height: 12rem;">
-                      <h5 class="card-title">ADIDAS</h5>
-                      <p class="card-text"> ADIDAS X SPEEDPORTAL MESSI .1 FG - TMSOOR/MINRUS/CBLACK</p>
-                      <h3 >8,500.00 THB</h3>
-                      <div class="star text-end">
-                        <span>
-                          <i class="bi bi-star" style="font-size:24px;"></i>
-                          <!-- text-warning -->
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
     
             </div>
                 <div class="row d-flex justify-content-center">
@@ -304,30 +129,11 @@
 </template>
 
 <script>
+  import product from '../data_json/product'
 
-// function parseURLParams(url) {
-//     var queryStart = url.indexOf("?") + 1,
-//         queryEnd   = url.indexOf("#") + 1 || url.length + 1,
-//         query = url.slice(queryStart, queryEnd - 1),
-//         pairs = query.replace(/\+/g, " ").split("&"),
-//         parms = {}, i, n, v, nv;
-
-//     if (query === url || query === "") return;
-
-//     for (i = 0; i < pairs.length; i++) {
-//         nv = pairs[i].split("=", 2);
-//         n = decodeURIComponent(nv[0]);
-//         v = decodeURIComponent(nv[1]);
-
-//         if (!parms.hasOwnProperty(n)) parms[n] = [];
-//         parms[n].push(nv.length === 2 ? v : null);
-//     }
-//     return parms;
-//   }
   console.log(window.location.href);
   console.log(window.location.search);
-  // var data_get = parseURLParams(window.location.href)
-  
+
 
 export default {
     data(){
@@ -339,6 +145,7 @@ export default {
             color:['แดง', 'ขาว', 'น้ำเงิน', 'ชมพู','ส้ม','แดง','เขียว','เทา'],
             max_price: 50000,
             min_price: 0,
+            product: product,
         }
     },
     created(){
