@@ -12,6 +12,8 @@ const order =[{
        delivery_status:"จัดส่งสินค้าเรียบร้อย",
        chart:[
         {
+       brand:"Nike",
+       pro_name:"NIKE Phantom GT2 Elite FG",
         product_id:10000001,
         amount:2,
         size:40,
@@ -20,6 +22,8 @@ const order =[{
         price:9400
         },
         {
+              brand:"Addidas",
+       pro_name:"ADIDAS Predator Edge.2 FG",
         product_id:20000001,
         amount:1,
         size:42,
@@ -30,3 +34,5 @@ const order =[{
        ]
 },
 ]
+
+export default order;

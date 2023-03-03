@@ -69,10 +69,10 @@
                                     <tr class="size_tr">
                                         <td>{{ item.order_number }} </td>
                                         <td>{{ item.date_sales }}</td>
-                                        <td>{{ parseInt(item.chart[0].price) + parseInt(item.chart[1].price)}} Bath</td>
+                                        <td>{{ sumPrice() }} Bath</td>
                                         <td>{{ item.pay_success }}</td>
                                         <td>{{ item.tax_order }}</td>
-                                        <td><a :href="'/order_de?oid='+item.order_number+'pri='+item.price" style="color: aliceblue;" >รายละเอียด</a></td>
+                                        <td><a :href="'/order_de?oid='+item.order_number" style="color: aliceblue;" >รายละเอียด</a></td>
                                     </tr>
 
 
@@ -85,7 +85,7 @@
                 </div>
             </div>
 
-
+            
         </div>
   
 
@@ -102,6 +102,15 @@ export default {
     },
     created(){
         this.order_info = JSON.parse(localStorage.getItem("order_key"));
+    },
+    methods:{
+        sumPrice(){
+            var sum = 0;
+            this.order_info[0].chart.forEach(item =>{
+                sum += item.price;
+            })
+            return sum;
+        }
     }
 }
 </script>
