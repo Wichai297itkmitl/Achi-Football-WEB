@@ -5,7 +5,6 @@
       <br>
   </div>
   <Footer></Footer>
-
   <Chart v-if="false"></Chart>
   <Order v-if="false"></Order>
 </template>
@@ -31,7 +30,10 @@ export default {
       chart:Chart,
       order:Order,
       chart_info:JSON.parse(localStorage.getItem("chart_key")),
-      order_info:JSON.parse(localStorage.getItem("order_key"))
+      order_info:JSON.parse(localStorage.getItem("order_key")),
+
+      is_login: false,
+      username: '',
     }
   },
   created(){

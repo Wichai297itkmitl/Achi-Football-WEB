@@ -212,7 +212,7 @@
             </div>
             <div class="row">
                 <div class="col for-fu">
-
+                    {{ product_info }}
                 </div>
             </div>
         </div>
@@ -221,10 +221,11 @@
 </template>
     
 <script>
+import product from '../data_json/product.js'
 export default {
     data() {
         return {
-            product_info: '',
+            product_info: product,
             search:'',
             find_size: -1,
             color: 'all',
@@ -254,7 +255,7 @@ export default {
             if (conF){
                 console.log("delete " + name);
                 console.log(index);
-                this.product_info.slice(index);
+                this.product_info.slice(index, 1);
                 console.log(this.product_info);
             }else{
                 console.log("No del");

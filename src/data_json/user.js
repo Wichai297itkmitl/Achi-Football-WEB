@@ -9,3 +9,5 @@ const user = [
         password:"big123456"
     }
 ]
+
+export default user;

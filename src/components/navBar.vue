@@ -142,7 +142,7 @@ export default {
   data() {
     return {
       search: false,
-      username: 'Wichai',
+      username: '',
       url: window.location.href,
       cart_number_no_look: 2,
     };
@@ -160,6 +160,16 @@ export default {
   },
   methods:{
     log_out(){
+      localStorage.removeItem('username');
+      localStorage.removeItem('user_id');
+      this.username = '';
+    }
+  },
+  created(){
+    try{
+      this.username = localStorage.getItem('username');
+      console.log(this.username);
+    }catch(err){
       this.username = '';
     }
   }
