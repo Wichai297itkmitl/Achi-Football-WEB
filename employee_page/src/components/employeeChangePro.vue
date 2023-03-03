@@ -229,7 +229,6 @@ export default {
             search:'',
             find_size: -1,
             color: 'all',
-
             e_id:"",
             e_name:"",
             e_brand: '',
@@ -239,7 +238,7 @@ export default {
         }
     },
     created(){
-        this.product_info = JSON.parse(localStorage.getItem("product_key"));
+        // this.product_info = JSON.parse(localStorage.getItem("product_key"));
     },
     methods:{
         look(id, name, brad, price, amo){
@@ -251,11 +250,12 @@ export default {
         },
         del(name, size, color, index){
             console.log(index);
-            let conF = confirm(`จะลบ ${name} \n ขนาด: ${size} สี: ${color}`);
+            var conF = confirm(`จะลบ ${name} \n ขนาด: ${size} สี: ${color}`);
+            console.log("conF "+ conF);
             if (conF){
                 console.log("delete " + name);
                 console.log(index);
-                this.product_info.slice(index, 1);
+                this.product_info.splice(index, 1);
                 console.log(this.product_info);
             }else{
                 console.log("No del");
