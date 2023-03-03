@@ -13,10 +13,28 @@
             <div class="row" style="color:#fff">
                 <div class="col">
                     <h4>ยี่ห้อสินค้า</h4>
-                    <div class="form-check" v-for="(item, index) in brand" :key="index">
-                        <input class="form-check-input" type="checkbox" :value="item" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            {{item}}
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" v-model="s_nike" id="flexCheckDefault">
+                        <label class="form-check-label">
+                            NIKE
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" v-model="s_adi" id="flexCheckDefault">
+                        <label class="form-check-label">
+                            ADIDAS
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" v-model="s_puma" id="flexCheckDefault">
+                        <label class="form-check-label">
+                            PUMA
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" v-model="s_mizu" id="flexCheckDefault">
+                        <label class="form-check-label">
+                            MIZUNO
                         </label>
                     </div>
                     <hr>
@@ -36,7 +54,7 @@
                     <div class="checksize">
                         <div class="form-check" v-for="(item, index) in size" :key="index">
                             <input class="form-check-input" type="checkbox" :value="item" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
+                            <label class="form-check-label">
                                 {{item}}
                             </label>
                         </div>
@@ -50,7 +68,7 @@
                     <h4>สี</h4>
                     <div class="form-check" v-for="(item, index) in color" :key="index">
                         <input class="form-check-input" type="checkbox" :value="item" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
+                        <label class="form-check-label">
                             {{item}}
                         </label>
                     </div>
@@ -94,18 +112,23 @@
 
             <!-- List_product -->
             <div class="row py-2">
-                <div class="col-3 mx-3 py-3" v-for="item in product" :key="item">
-                  <div class="card bg-dark " style="width: 18rem; height: ; ">
+                <div class="col-3 mx-3 py-3" v-for="item in product" :key="item"
+                 v-show="(search_all ? true: false) || ((s_nike && item.brand === 'Nike') ? true: false) ||
+                 ((s_adi && item.brand === 'Adidas' ) ? true: false) ||
+                 ((s_puma && item.brand === 'Puma') ? true: false) ||
+                 ((s_mizu && item.brand === 'Mizuno') ? true: false)">
+                  <div class="card bg-dark " style="width: 18rem; height: ; " >
                     <img
-                      :src="item.imgage"
+                      :src="item.image"
                       class=""
                       alt="..."
-                      width="100%" height="280px"
+                      style="max-width: 300px; min-height: 300px; max-height: 300px; cursor: pointer;"
+                      @click="go_detail(item.product_id)"
                     />
                     <div class="card-body text-start" style="color:#fff; width: 18rem; height: 12rem;">
                       <h5 class="card-title">{{ item.brand }}</h5>
-                      <p class="card-text">{{ item.pro_name }}</p>
-                      <h3 >{{ item.price }}.00 THB</h3>
+                      <p class="card-text" @click="go_detail(item.product_id)" style="cursor: pointer;">{{ item.pro_name }}</p>
+                      <h3 @click="go_detail(item.product_id)" style="cursor: pointer;">{{ item.price }}.00 THB</h3>
                       <div class="star text-end">
                         <span>
                           <i class="bi bi-star" style="font-size:24px;"></i>
@@ -146,6 +169,12 @@ export default {
             max_price: 50000,
             min_price: 0,
             product: product,
+
+            search_all : true,
+            s_nike : false,
+            s_puma : false,
+            s_adi : false,
+            s_mizu : false,
         }
     },
     created(){
@@ -160,10 +189,38 @@ export default {
         }
     },
     watch:{
-      // url(ndata, odata){
-      //   this.url = ndata;
-      //   console.log(odata);
-      // }
+        s_nike(n){
+            if (!n){
+                this.search_all = true;
+            }else{
+                this.search_all = false;
+            }
+        },
+        s_adi(n){
+            if (!n){
+                this.search_all = true;
+            }else{
+                this.search_all = false;
+            }
+        },
+        s_puma(n){
+            if (!n){
+                this.search_all = true;
+            }else{
+                this.search_all = false;
+            }
+        },
+        s_mizu(n){
+            if (!n){
+                this.search_all = true;
+            }else{
+                this.search_all = false;
+            }
+        },
+    }, methods:{
+        go_detail(id){
+            window.location.href = '/info?pid='+id;
+        }
     }
 }
 </script>
